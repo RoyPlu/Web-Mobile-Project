@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Locations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function validate() {
+            var id = document.getElementById("locationid").value;
+            if (/^\d+$/.test(id)) {
+                show(id)
+            } else {
+                document.getElementById("result").innerHTML = "<label>Dit is geen nummer</label>";
+            }
+        }
+
+        function show(id) {
+            var request = new Request('/locations/' + id, {
+                method: 'GET',
+                mode: 'cors',
+                redirect: 'follow',
+                headers: new Headers({
+                    'Content-Type': 'text/plain'
+                })
+            });
+
+            fetch(request).then(function (response) {
+                console.log(response);
+                return response.json();
+            }).then(function (j) {
+                console.log(j);
+                var table = "<h3>Gegevens voor locatie " + j.id + "</h3>";
+                table += "<table><tr><th>Naam: </th><td>" + j.name + "</td></tr>";
+                document.getElementById("result").innerHTML = table;
+            }).catch(function (err) {
+                document.getElementById("result").innerHTML = "<label>ongeldig id</label>";
+            });
+
+        }
+
+        function afterLoaded() {
+            document.getElementById("searchbutton").addEventListener("click", validate, false);
+        }
+
+        window.addEventListener("load", afterLoaded, false);
+    </script>
+</head>
+<body>
+<h1>Locations</h1>
+<div>
+    <br />
+    <input class="inputLabel" type="text" id="eventid"/>
+</div>
+<input type="submit" value="zoek" id="searchbutton">
+<br/>
+<div id="result"></div>
+</body>
+</html>
