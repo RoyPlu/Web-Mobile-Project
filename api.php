@@ -4,23 +4,23 @@ require_once 'vendor/autoload.php';
 
 use \model\PDOEventRepository;
 use \model\Event;
-use \view\EventJsonView;
+use \view\LocationJsonView;
 use \controller\EventsController;
 $user = "root";
-$password = "";
-$db = "web-mob-project";
+$password = "vagrant";
+$db = "web-mobile-project";
 $hostname="localhost";
 $pdo = null;
 try {
     $pdo = new PDO("mysql:host=$hostname;dbname=$db;", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $eventPDORepository = new PDOEventRepository($pdo);
-    $eventJsonView = new EventJsonView();
-    $eventsController = new EventsController($eventPDORepository, $eventJsonView);
+    $locationPDORepository = new PDOLocationRepository($pdo);
+    $locationJsonView = new LocationJsonView();
+    $locationsController = new LocationsController($locationPDORepository, $locationJsonView);
     $router = new AltoRouter();
     $router->setBasePath('/');
 
-    $router->map('GET', 'location/[i:id]',
+    $router->map('GET', 'locations/[i:id]',
         function ($id) use (&$locationsController) {
             $locationsController->handleFindLocationById($id);
         }
@@ -28,48 +28,22 @@ try {
 
     $router->map('GET', 'locations',
         function () use (&$locationsController) {
-            $locationsController->handleFindLocation();
+            $locationsController->handleFindLocations();
         }
     );
 
-    $router->map('GET', 'events/person/[i:id]',
-        function ($id) use (&$eventsController) {
-            $eventsController->handleFindEventByPersonId($id);
-        }
-    );
 
-    $router->map('GET', 'events/',
-        function () use (&$eventsController) {
-            $from = $_GET["from"];
-            $until = $_GET["until"];
-            $eventsController->handleFindEventByDate($from, $until);
-        }
-    );
-
-    $router->map('GET', 'person/[i:id]/events/',
-        function ($id) use (&$eventsController) {
-            $from = $_GET["from"];
-            $until = $_GET["until"];
-            $eventsController->handleFindEventByPersonAndDate($id, $from, $until);
-        }
-    );
-
-    $router->map('POST', 'insertevent' ,
-        function() use (&$eventsController) {
+    $router->map('POST', 'insertlocation' ,
+        function() use (&$locationsController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data;
             var_dump($data);
-            $insertedEvent = new Event();
-            $insertedEvent->setEventName($data["eventName"]);
-            $insertedEvent->setCost($data["eventCost"]);
-            $insertedEvent->setEventLocation($data["eventLocation"]);
-            $insertedEvent->setEventStart($data["eventStart"]);
-            $insertedEvent->setEventEnd($data["eventEnd"]);
-            $insertedEvent->setPersonId($data["personId"]);
+            $insertedLocation = new Location();
+            $insertedLocation->setLocationName($data["locationName"]);
 
-            var_dump($insertedEvent);
-            $eventsController->handleCreateEvent($insertedEvent);
-    });
+            var_dump($insertedLocation);
+            $locationsController->handleCreateLocation($insertedLocation);
+        });
 
     $match = $router->match();
     if($match && is_callable($match['target'])) {
