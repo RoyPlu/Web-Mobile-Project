@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+{% block title %}locations{% endblock %}
+{% block body %}
+    <h1>Locations</h1>
+
+    <ul>
+    {%  for location in locations if locations is not empty %}
+        <li>
+            <b>{{ location.id }}</b>
+            <a href="../location/{{ location.id }}"><b>{{ location.name }}</b></a>
+        </li>
+        {%  else %}
+            <li>No locations found</li>
+            {% endfor %}
+    </ul>
+{% endblock %}

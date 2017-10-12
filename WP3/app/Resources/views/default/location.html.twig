@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+{% block title %}locations{% endblock %}
+{% block body %}
+    <ul>
+        {%  for problemMessage in problemMessages if problemMessages is not empty %}
+            <li>
+                <b>{{ problemMessage.problem}}</b>
+            </li>
+        {%  else %}
+            <li>No problems found</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
