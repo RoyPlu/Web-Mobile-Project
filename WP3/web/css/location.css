@@ -1,0 +1,9 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+ul {
+    list-style:none;
+    padding-left:0;
+}​
