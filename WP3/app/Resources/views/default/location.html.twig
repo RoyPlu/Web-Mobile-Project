@@ -1,6 +1,8 @@
 {% extends "::base.html.twig" %}
 {% block title %}locations{% endblock %}
 {% block body %}
+    <div class="container">
+    <h1>Problemen</h1>
     <ul>
         {%  for problemMessage in problemMessages if problemMessages is not empty %}
             <li>
@@ -10,5 +12,17 @@
             <li>No problems found</li>
         {% endfor %}
     </ul>
+    </br>
+    <h1>Status</h1>
+    <ul>
+        {%  for statusMessage in statusMessages if statusMessages is not empty %}
+            <li>
+                <b>{{ statusMessage.status}}</b>
+            </li>
+        {%  else %}
+            <li>No status found</li>
+        {% endfor %}
+    </ul>
+    </div>
 
 {% endblock %}

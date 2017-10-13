@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Location;
 use AppBundle\Entity\ProblemMessage;
+use AppBundle\Entity\StatusMessage;
 use AppBundle\Repository\ProblemMessageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -34,7 +35,7 @@ class LocationController extends Controller
 
         return $this->render(
             'default/locations.html.twig',
-            array("success" => True, "locations" => $locations, "problemMessages" => $problemMessages));
+            array("success" => True, "locations" => $locations));
     }
 
     /**
@@ -51,8 +52,12 @@ class LocationController extends Controller
 
         }
 
+
+        $statusMessages = $em->getRepository(StatusMessage::class)
+            ->findBy(array('locationId' => $id));
+
         return $this->render(
             'default/location.html.twig',
-            array("success" => True, "problemMessages" => $problemMessages));
+            array("success" => True, "problemMessages" => $problemMessages, "statusMessages" => $statusMessages));
     }
 }
