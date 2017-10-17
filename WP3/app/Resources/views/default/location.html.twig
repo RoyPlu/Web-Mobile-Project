@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+{% block title %}locations{% endblock %}
+{% block body %}
+    <head>
+        <link rel="stylesheet" href="../web/css/sizing.css">
+    </head>
+    <div class="container" style="background-color: #edf0ee">
+
+    <h1>Problemen</h1>
+        <hr style="width: 97%; color: gray; height: 2px; background-color: gray" />
+    <ul>
+        {%  for problemMessage in problemMessages if problemMessages is not empty %}
+            <li>
+                <div class="alert alert-danger" role="alert">
+                    <p>{{ problemMessage.problem}}</p>
+                </div>
+
+            </li>
+        {%  else %}
+            <li>No problems found</li>
+        {% endfor %}
+    </ul>
+    </br>
+    <h1>Status</h1>
+        <hr style="width: 97%; color: gray; height: 2px; background-color: gray" />
+        <div class="smaller">
+        {%  for statusMessage in statusMessages if statusMessages is not empty %}
+            <div class="alert alert-info" role="alert">
+                <h2>{{ statusMessage.status}}</h2>
+            </div>
+        {%  else %}
+            <p>No status found</p>
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
