@@ -1,6 +1,6 @@
 <?php
 
-namespace api\model;
+namespace model;
 
 
 interface LocationRepository

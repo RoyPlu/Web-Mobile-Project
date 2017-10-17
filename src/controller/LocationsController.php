@@ -1,20 +1,14 @@
 <?php
-namespace api\controller;
-
-use api\model\LocationRepository;
-use api\view\View;
-use api\model\Location;
+namespace controller;
+use model\EventRepository;
+use view\View;
+use \model\Event;
 
 class LocationsController
 {
     private $locationRepository;
     private $view;
 
-    /**
-     * LocationsController constructor.
-     * @param LocationRepository $locationRepository
-     * @param View $view
-     */
     public function __construct(LocationRepository $locationRepository, View $view)
     {
         $this->locationRepository = $locationRepository;
@@ -24,13 +18,13 @@ class LocationsController
     public function handleFindLocationById($id = null)
     {
         $location = $this->locationRepository->findLocationById($id);
-        $this->view->show(['location' => $location]);
+        $this->view->show(['location'=>$location]);
     }
 
     public function handleFindLocations()
     {
         $locations = $this->locationRepository->FindLocations();
-        $this->view->show(['locations' => $locations]);
+        $this->view->show(['locations'=>$locations]);
     }
 
     public function handleCreateLocation(Location $location)
