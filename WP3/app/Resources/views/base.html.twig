@@ -3,11 +3,70 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="../../../web/css/location.css">
+            <link rel="stylesheet" href="../../../web/css/error.css">
+            <link rel="stylesheet" href="../../../web/css/ganesh.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                background-color: #9fa2a0;
+            }
+        </style>
     </head>
+
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+            <div class="">
+
+                <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="../home">Home</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class=""><a href="../locations">Locations</a></li>
+                            </ul>
+                            {% if app.user %}
+                                <ul class="nav pull-right">
+                                <h3>{{ app.user.email }}</h3>
+                                </ul>
+                                {%  else %}
+                                    <form class="navbar-form navbar-right" role="search" action="{{ path("fos_user_security_check") }}" method="post">
+                                        <div class="form-group">
+                                            <input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.refreshToken('authenticate') }}" />
+                                            <input type="text" class="form-control" id="username" name="_username" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="password" name="_password" placeholder="Password">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Sign In</button>
+                                    </form>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </nav>
+
+
+                {% block body %}{% endblock %}
+                {% block javascripts %}
+                    <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+                    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+                {% endblock %}
+            </div>
     </body>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>

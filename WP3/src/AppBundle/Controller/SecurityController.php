@@ -13,7 +13,7 @@ class SecurityController extends Controller
      */
     public function loginAction()
     {
-        return $this->render('AppBundle:Security:login.html.twig', array(
+        return $this->render('FOSUserBundle:Security:login.html.twig', array(
             // ...
         ));
     }
@@ -32,6 +32,12 @@ class SecurityController extends Controller
     public function quitAction(Request $request)
     {
         // NB hier geen code: het framework voorziet de acties
+    }
+
+    public function getTokenAction()
+    {
+        return new Response($this->container->get('form.csrf_provider')
+            ->generateCsrfToken('authenticate'));
     }
 
 
