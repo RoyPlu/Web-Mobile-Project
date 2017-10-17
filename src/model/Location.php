@@ -1,5 +1,5 @@
 <?php
-namespace model;
+namespace api\model;
 
 class Location
 {
@@ -38,7 +38,7 @@ class Location
     /**
      * @param string $locationName
      */
-    public function setEventName($locationName)
+    public function setLocationName($locationName)
     {
         $this->locationName = $locationName;
     }

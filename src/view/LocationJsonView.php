@@ -1,8 +1,8 @@
 <?php
 
-namespace view;
+namespace api\view;
 
-class EventJsonView implements View
+class LocationJsonView implements View
 {
     public function show(array $data)
     {
@@ -21,7 +21,8 @@ class EventJsonView implements View
                     'name' => $location->getLocationName()]);
                 $eventArr[] = $s;
             }
-            echo "[" . implode(",", $eventArr) . "]";
+
+            echo "[ " . implode(",", $eventArr) . " ]";
         }else {
             echo '{}';
         }
