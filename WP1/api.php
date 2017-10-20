@@ -5,12 +5,12 @@ require 'vendor/altorouter/altorouter/AltoRouter.php';
 
 use api\controller\LocationsController;
 use api\controller\ProblemMessageController;
-use api\model\Location;
-use api\model\PDOLocationRepository;
-use api\model\PDOProblemMessageRepository;
-use api\model\PDOStatusMessageRepository;
-use api\model\ProblemMessage;
-use api\model\StatusMessage;
+use api\model\entity\Location;
+use api\model\entity\ProblemMessage;
+use api\model\entity\StatusMessage;
+use api\model\repository\PDOLocationRepository;
+use api\model\repository\PDOProblemMessageRepository;
+use api\model\repository\PDOStatusMessageRepository;
 use api\view\LocationJsonView;
 use api\view\ProblemMessageJsonView;
 use api\view\StatusMessageJsonView;
@@ -56,7 +56,7 @@ try {
         }
     );
 
-    $router->map('POST', '/insertlocation/' ,
+    $router->map('POST', '/locations/' ,
         function() use (&$locationsController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
@@ -70,7 +70,7 @@ try {
         }
     );
 
-    $router->map('GET', '/statusmessage/[i:id]',
+    $router->map('GET', '/statusmessages/[i:id]',
         function ($id) use (&$statusMessageController) {
             $statusMessageController->handleFindStatusMessageById($id);
         }
@@ -82,7 +82,7 @@ try {
         }
     );
 
-    $router->map('POST', '/insertstatusmessage/',
+    $router->map('POST', '/statusmessages/',
         function() use (&$statusMessageController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
@@ -98,7 +98,7 @@ try {
         }
     );
 
-    $router->map('GET', '/problemmessage/[i:id]',
+    $router->map('GET', '/problemmessages/[i:id]',
         function($id) use (&$problemMessageController) {
             $problemMessageController->handleFindProblemMessageById($id);
         }
@@ -110,7 +110,7 @@ try {
         }
     );
 
-    $router->map('POST', '/insertproblemmessage/',
+    $router->map('POST', '/problemmessages/',
         function() use (&$problemMessageController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
