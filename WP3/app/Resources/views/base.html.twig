@@ -7,7 +7,6 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
             <link rel="stylesheet" href="../../../web/css/location.css">
             <link rel="stylesheet" href="../../../web/css/error.css">
-            <link rel="stylesheet" href="../../../web/css/ganesh.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -32,7 +31,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="../home">Home</a>
+                            <a class="navbar-brand" href="../">Home</a>
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
@@ -40,7 +39,10 @@
                             </ul>
                             {% if app.user %}
                                 <ul class="nav pull-right">
-                                <h3>{{ app.user.email }}</h3>
+                                    <h3 style="color: whitesmoke">{{ app.user }} <a href="{{  path("fos_user_security_logout") }}">
+                                            <span style="font-size: 0.6em;">Logout</span>
+                                        </a></h3>
+
                                 </ul>
                                 {%  else %}
                                     <form class="navbar-form navbar-right" role="search" action="{{ path("fos_user_security_check") }}" method="post">
@@ -52,7 +54,9 @@
                                             <input type="password" class="form-control" id="password" name="_password" placeholder="Password">
                                         </div>
                                         <button type="submit" class="btn btn-default">Sign In</button>
+                                        <a href="../register">New user?</a>
                                     </form>
+
                             {% endif %}
 
                         </div>
