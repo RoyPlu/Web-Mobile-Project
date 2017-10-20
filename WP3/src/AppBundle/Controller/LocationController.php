@@ -41,7 +41,7 @@ class LocationController extends Controller
     /**
      * @Route("location/{id}")
      */
-    public function locationAction($id)
+    public function locationAction($id=1)
     {
         $em = $this->getDoctrine()->getManager();
         $problemMessages = $em->getRepository(ProblemMessage::class)

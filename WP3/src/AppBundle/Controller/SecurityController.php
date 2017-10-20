@@ -27,6 +27,16 @@ class SecurityController extends Controller
     }
 
     /**
+     * @Route("/register", name="registerroute")
+     */
+    public function registerAction()
+    {
+        return $this->render('FOSUserBundle:Security:register.html.twig', array(
+            // ...
+        ));
+    }
+
+    /**
      * @Route("/quit", name="quitroute")
      */
     public function quitAction(Request $request)
