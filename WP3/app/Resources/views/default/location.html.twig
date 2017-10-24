@@ -33,5 +33,30 @@
         {% endfor %}
         </div>
     </div>
+    </br>
+    {% if is_granted('ROLE_TECH') %}
+        <div class="container" style="background-color: #edf0ee">
+        <h1>Problemen toegekend aan technicus</h1>
+        <hr />
+            <ul>
+
+                {%  for problemMessage in problemMessages if problemMessages is not empty %}
+                    {%  if problemMessage.techId == app.user.id  %}
+                        {%  if problemMessage.finished == 0 %}
+                    <li>
+                        <div class="alert alert-danger" role="alert">
+                            <p>{{ problemMessage.problem}}</p>
+                        </div>
+
+                    </li>
+                    {%  endif %}
+                        {% endif %}
+                {%  else %}
+                    <li>No problems found</li>
+
+                {% endfor %}
+            </ul>
+    </div>
+        {% endif %}
 
 {% endblock %}
