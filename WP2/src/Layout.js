@@ -10,9 +10,9 @@ import {
 import DashboardPage from './dashboard/dashboard.page';
 import CaloriesPage from './calories/calories.page';
 import CaloriesAddPage from './calories/calories-add.page';
-import HabitsPage from './habits/habits.page';
+import ProblemsPage from './problems/problems.page';
 import SettingsPage from './settings/settings.page';
-import WeightPage from './weight/weight.page';
+import StatusPage from './status/status.page';
 import { connect } from 'react-redux';
 
 class Layout extends Component {
@@ -34,29 +34,22 @@ class Layout extends Component {
                     />
                     <Drawer open={this.state.drawerOpen}>
                         <MenuItem onClick={this.toggleState} >
-                            <Link to="/">Dashboard</Link>
+                            <Link to="/">Locations</Link>
                         </MenuItem>
                         <MenuItem onClick={this.toggleState} >
-                            <Link to="/weight">Weight</Link>
+                            <Link to="/statusmessages">Status Message</Link>
                         </MenuItem>
                         <MenuItem onClick={this.toggleState} >
-                            <Link to="/calories">Calories</Link>
-                        </MenuItem>
-                        <MenuItem onClick={this.toggleState} containerElement={
-                            <Link to="/habits"></Link>
-                        }>
-                            Habits
-                        </MenuItem>
-                        <MenuItem onClick={this.toggleState} >
-                            <Link to="/settings">Settings</Link>
+                            <Link to="/problemmessages">Problem Message</Link>
                         </MenuItem>
                     </Drawer>
                     <Route exact={true} path="/" component={DashboardPage} />
-                    <Route exact={true} path="/calories" component={CaloriesPage} />
+                    <Route path="/statusmessages" component={StatusPage} />
+                    <Route path="/problemmessages" component={ProblemsPage} />
+                    <Route exact={true} path="/" component={CaloriesPage} />
                     <Route path="/calories/add" component={CaloriesAddPage} />
-                    <Route path="/habits" component={HabitsPage} />
                     <Route path="/settings" component={SettingsPage} />
-                    <Route path="/weight" component={WeightPage} />
+
                 </div>
             </Router>
         );

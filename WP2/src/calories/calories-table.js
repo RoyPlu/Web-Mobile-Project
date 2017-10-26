@@ -24,8 +24,8 @@ const CaloriesTable = (props) => (
     <Table>
         <TableHeader>
             <TableRow>
-                <TableHeaderColumn>Date</TableHeaderColumn>
-                <TableHeaderColumn>Calories</TableHeaderColumn>
+                <TableHeaderColumn>Id</TableHeaderColumn>
+                <TableHeaderColumn>Name</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>

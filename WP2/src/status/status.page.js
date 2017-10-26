@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import mapDispatchToProps from '../common/title-dispatch-to-props';
 
-class HabitsPage extends Component {
-    render(){
+class StatusPage extends Component {
+    render() {
         return (
-            <h2>Habits</h2>
+            <h2>Status</h2>
         )
     }
     componentDidMount() {
-        this.props.setTitle('Habits');
-    }    
+        this.props.setTitle('Status');
+    }
 }
 
-export default connect(undefined, mapDispatchToProps)(HabitsPage);
+export default connect(undefined, mapDispatchToProps)(StatusPage);

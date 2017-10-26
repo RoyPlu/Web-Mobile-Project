@@ -5,11 +5,11 @@ import mapDispatchToProps from '../common/title-dispatch-to-props';
 class DashboardPage extends Component {
     render(){
         return (
-            <h2>Dashboard</h2>
+            <h2>Locations</h2>
         )
     }
     componentDidMount() {
-        this.props.setTitle('Dashboard');
+        this.props.setTitle('Locations');
     }    
 }
 
