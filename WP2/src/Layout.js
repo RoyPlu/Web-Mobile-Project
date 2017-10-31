@@ -8,8 +8,8 @@ import {
     Link
 } from 'react-router-dom';
 import DashboardPage from './dashboard/dashboard.page';
-import CaloriesPage from './calories/calories.page';
-import CaloriesAddPage from './calories/calories-add.page';
+import LocationsPage from './locations/locations.page';
+import CaloriesAddPage from './locations/calories-add.page';
 import ProblemsPage from './problems/problems.page';
 import SettingsPage from './settings/settings.page';
 import StatusPage from './status/status.page';
@@ -28,13 +28,17 @@ class Layout extends Component {
         return (
             <Router>
                 <div>
+
                     <AppBar
                         title={this.props.title}
                         onLeftIconButtonTouchTap={this.toggleState}
                     />
                     <Drawer open={this.state.drawerOpen}>
                         <MenuItem onClick={this.toggleState} >
-                            <Link to="/">Locations</Link>
+                            <Link to="/">Dashboard</Link>
+                        </MenuItem>
+                        <MenuItem onClick={this.toggleState} >
+                            <Link to="/locations">Locations</Link>
                         </MenuItem>
                         <MenuItem onClick={this.toggleState} >
                             <Link to="/statusmessages">Status Message</Link>
@@ -44,9 +48,9 @@ class Layout extends Component {
                         </MenuItem>
                     </Drawer>
                     <Route exact={true} path="/" component={DashboardPage} />
+                    <Route path="/locations" component={LocationsPage} />
                     <Route path="/statusmessages" component={StatusPage} />
                     <Route path="/problemmessages" component={ProblemsPage} />
-                    <Route exact={true} path="/" component={CaloriesPage} />
                     <Route path="/calories/add" component={CaloriesAddPage} />
                     <Route path="/settings" component={SettingsPage} />
 

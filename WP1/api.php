@@ -18,7 +18,7 @@ use api\controller\StatusMessageController;
 
 $user = "root";
 $password = "";
-$db = "web-mobile-project-WP1";
+$db = "web-mobile-project-wp1";
 $hostname="localhost:7777";
 $pdo = null;
 

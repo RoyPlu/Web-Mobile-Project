@@ -8,11 +8,15 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
+import { Link } from 'react-router-dom';
+
 const Row = (props) => (
-    <TableRow key={props.entry.date}>
-        <TableRowColumn>{props.entry.date}</TableRowColumn>
-        <TableRowColumn>{props.entry.weight}</TableRowColumn>
-        <TableRowColumn><button onClick={() => { props.delete(props.entry.date, props.entry.id) }}>Verwijderen</button></TableRowColumn>
+    <TableRow key={props.entry.id}>
+        <TableRowColumn>{props.entry.id}</TableRowColumn>
+        <TableRowColumn>{props.entry.name}</TableRowColumn>
+        <TableRowColumn><Link to="/problemmessages">Problem</Link></TableRowColumn>
+        <TableRowColumn><Link to="/statusmessages">Status</Link></TableRowColumn>
+
     </TableRow>
 )
 
@@ -20,12 +24,14 @@ const Rows = (props) => props.entries.map(e => (
     <Row entry={e} delete={props.delete} />
 ));
 
-const CaloriesTable = (props) => (
+const LocationsTable = (props) => (
     <Table>
         <TableHeader>
             <TableRow>
                 <TableHeaderColumn>Id</TableHeaderColumn>
                 <TableHeaderColumn>Name</TableHeaderColumn>
+                <TableHeaderColumn>Problem</TableHeaderColumn>
+                <TableHeaderColumn>Status</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>
@@ -35,4 +41,4 @@ const CaloriesTable = (props) => (
 )
 
 
-export default CaloriesTable;
+export default LocationsTable;

@@ -1,21 +1,22 @@
 const initialState = {
     title: 'Dashboard',
-    calorieEntries: [],
+    locationEntries: [],
+    problemEntries: [],
 };
 
 const layoutreducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_TITLE':
             return { ...state, ...{ title: action.payload } };
-        case 'SET_CALORIEENTRIES':
-            return { ...state, ...{ calorieEntries: action.payload } };
-        case 'ADD_CALORIEENTRY':
-            return { ...state, ...{ calorieEntries: [...state.calorieEntries, action.payload] } };
-        case 'DELETE_CALORIEENTRY':
+        case 'SET_LOCATIONENTRIES':
+            return { ...state, ...{ locationEntries: action.payload } };
+        case 'ADD_LOCATIONENTRY':
+            return { ...state, ...{ locationEntries: [...state.locationEntries, action.payload] } };
+        case 'DELETE_LOCATIONENTRY':
             const date = action.payload;
-            const entryToDeleteIndex = state.calorieEntries.findIndex(e => e.date === date);
-            const calorieEntries = [...state.calorieEntries.slice(0, entryToDeleteIndex), ...state.calorieEntries.slice(entryToDeleteIndex + 1)];
-            return { ...state, ...{ calorieEntries: calorieEntries } };
+            const entryToDeleteIndex = state.locationEntries.findIndex(e => e.date === date);
+            const locationEntries = [...state.locationEntries.slice(0, entryToDeleteIndex), ...state.locationEntries.slice(entryToDeleteIndex + 1)];
+            return { ...state, ...{ locationEntries: locationEntries } };
         default:
             return state;
     }

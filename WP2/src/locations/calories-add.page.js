@@ -33,12 +33,12 @@ class CaloriesAddPage extends Component {
     save = (ev) => {
         ev.preventDefault();
         const date = ev.target['date'].value;
-        const calories = ev.target['calories'].value;
+        const calories = ev.target['locations'].value;
         // date in juiste formaat YYYY-MM-dd => ddMMYYYY
         const momentDate = moment(date);
         const dateToSend = momentDate.format('DDMMYYYY');
         const id = HttpService.getId();
-        HttpService.addCalorieEntry(dateToSend, calories, id).then(() => {
+        HttpService.addLocationEntry(dateToSend, calories, id).then(() => {
             this.props.addEntry({
                 "id": id,
                 "userId": 1,

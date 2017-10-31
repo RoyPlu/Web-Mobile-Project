@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CaloriesTable from './calories-table';
+import LocationsTable from './locations-table';
 import HttpService from '../common/http-service';
 import { connect } from "react-redux";
 import mapDispatchToPropsTitle from '../common/title-dispatch-to-props';
@@ -7,25 +7,25 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import { Link } from 'react-router-dom';
 
-let hasFetchedCalorieEntries = false;
+let hasFetchedLocationEntries = false;
 
-class CaloriesPage extends Component {
+class LocationsPage extends Component {
     componentWillMount() {
-        if (!hasFetchedCalorieEntries) {
-            HttpService.getCalories().then(fetchedEntries => this.props.setEntries(fetchedEntries));
-            hasFetchedCalorieEntries = true;
+        if (!hasFetchedLocationEntries) {
+            HttpService.getLocations().then(fetchedEntries => this.props.setEntries(fetchedEntries));
+            hasFetchedLocationEntries = true;
         }
     }
-    delete = (date, id) => {
-        this.props.deleteEntry(date);
-        HttpService.deleteCalorieEntry(id);
+    delete = (id, name) => {
+        this.props.deleteEntry(id);
+        HttpService.deleteLocationEntry(name);
     }
     render() {
-        const fetchedEntries = this.props.calorieEntries;
+        const fetchedEntries = this.props.locationEntries;
         return (
             <div>
-                <CaloriesTable entries={fetchedEntries} delete={this.delete} />
-                <Link to="/calories/add">
+                <LocationsTable entries={fetchedEntries} delete={this.delete} />
+                <Link to="/locations/add">
                     <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
                         <ContentAdd />
                     </FloatingActionButton>
@@ -34,13 +34,13 @@ class CaloriesPage extends Component {
         );
     }
     componentDidMount() {
-        this.props.setTitle('Calories');
+        this.props.setTitle('Locations');
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        calorieEntries: state.calorieEntries,
+        locationEntries: state.locationEntries,
     };
 };
 
@@ -48,12 +48,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         ...mapDispatchToPropsTitle(dispatch, ownProps),
         setEntries: (entries) => {
-            dispatch({ type: 'SET_CALORIEENTRIES', payload: entries });
+            dispatch({ type: 'SET_LOCATIONENTRIES', payload: entries });
         },
         deleteEntry: (date) => {
-            dispatch({ type: 'DELETE_CALORIEENTRY', payload: date })
+            dispatch({ type: 'DELETE_LOCATIONENTRY', payload: date })
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CaloriesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LocationsPage);
