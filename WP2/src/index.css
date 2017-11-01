@@ -2,3 +2,37 @@ html, body{
     padding: 0;
     margin: 0;
 }
+
+.card {
+    float: left;
+    padding: 20px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: rgba(220, 213, 175, 0.18);
+}
+
+.main {
+    text-align: center;
+}
+
+
+    h1.elegantshadow {
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        font-size: 80px;
+        text-align: center;
+        text-transform: uppercase;
+        text-rendering: optimizeLegibility;
+        color: #131313;
+        letter-spacing: .15em;
+    }
+
+    h2.elegantshadow {
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        text-rendering: optimizeLegibility;
+        color: #131313;
+        letter-spacing: .15em;
+    }

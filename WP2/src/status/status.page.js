@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import mapDispatchToProps from '../common/title-dispatch-to-props';
 import HttpService from '../common/http-service';
+import '../index.css';
 
 let hasFetchedEntries = false;
 
@@ -24,12 +25,12 @@ class StatusPage extends Component {
 
         var renderedEntries = this.state.status.map((entry) => {
             return (
-                <div>
-                    <h3>Status Id: {entry.id}</h3>
+                <div class="card">
+                    <h1>Status Id: {entry.id}</h1>
+                    <hr/>
                     <h3>Location Id: {entry.location_id}</h3>
                     <h3>Description: {entry.status}</h3>
                     <h3>Date: {entry.date}</h3>
-                    <hr/>
                 </div>
             );
         });

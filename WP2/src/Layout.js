@@ -39,12 +39,7 @@ class Layout extends Component {
                         <MenuItem onClick={this.toggleState} >
                             <Link to="/locations">Locations</Link>
                         </MenuItem>
-                        <MenuItem onClick={this.toggleState} >
-                            <Link to="/statusmessages">Status Message</Link>
-                        </MenuItem>
-                        <MenuItem onClick={this.toggleState} >
-                            <Link to="/problemmessages">Problem Message</Link>
-                        </MenuItem>
+
                     </Drawer>
                     <Route exact={true} path="/" component={DashboardPage} />
                     <Route exact={true} path='/locations' component={LocationsPage}/>
