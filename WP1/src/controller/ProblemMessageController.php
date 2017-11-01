@@ -38,4 +38,10 @@ class ProblemMessageController
         $this->problemMessageRepository->insertProblemMessage($problemMessage);
     }
 
+    public function handleFindProblemMessagesByLocationId($id)
+    {
+        $problemMessages = $this->problemMessageRepository->findProblemMessagesByLocationId($id);
+        $this->view->show(['problemmessages' => $problemMessages]);
+    }
+
 }

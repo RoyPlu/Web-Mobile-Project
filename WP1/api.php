@@ -16,15 +16,23 @@ use api\view\ProblemMessageJsonView;
 use api\view\StatusMessageJsonView;
 use api\controller\StatusMessageController;
 
-$user = "root";
+$username = "root";
 $password = "";
-$db = "web-mobile-project-wp1";
-$hostname="localhost:7777";
+$databasename = "web-mobile-project-wp1";
+$hostname="localhost";
 $pdo = null;
 
 try {
-    $pdo = new PDO("mysql:host=$hostname;dbname=$db;", $user, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO("mysql:host=". $hostname . ";dbname=" . $databasename, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE,
+        PDO::ERRMODE_EXCEPTION);
+		//echo 'connected';
+} catch (Exception $e) {
+    echo 'cannot connect to database';
+}
+
+
+try {
 
     //locations
     $locationPDORepository = new PDOLocationRepository($pdo);
@@ -42,7 +50,7 @@ try {
     $problemMessageController = new ProblemMessageController($problemMessagePDORepository, $problemMessageJsonView);
 
     $router = new AltoRouter();
-    $router->setBasePath('/Web-Mobile-Project/api.php');
+    $router->setBasePath('/WP1/api.php');
 
     $router->map('GET', '/locations/[i:id]',
         function ($id) use (&$locationsController) {
@@ -53,6 +61,18 @@ try {
     $router->map('GET', '/locations',
         function () use (&$locationsController) {
             $locationsController->handleFindLocations();
+        }
+    );
+
+    $router->map('GET', '/location/[i:id]/problems',
+        function ($id) use (&$problemMessageController) {
+            $problemMessageController->handleFindProblemMessagesByLocationId($id);
+        }
+    );
+
+    $router->map('GET', '/location/[i:id]/status',
+        function ($id) use (&$statusMessageController) {
+            $statusMessageController->handleFindStatusMessagesByLocationId($id);
         }
     );
 

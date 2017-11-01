@@ -39,4 +39,10 @@ class StatusMessageController
         $this->statusMessageRepository->insertStatusMessage($statusMessage);
     }
 
+    public function handleFindStatusMessagesByLocationId($id)
+    {
+        $statusMessages = $this->statusMessageRepository->findStatusMessagesByLocationId($id);
+        $this->view->show(['statusmessages' => $statusMessages]);
+    }
+
 }

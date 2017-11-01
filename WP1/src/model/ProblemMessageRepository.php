@@ -15,5 +15,6 @@ interface ProblemMessageRepository
     function findProblemMessageById($id);
     function findProblemMessages();
     function insertProblemMessage(ProblemMessage $problemMessage);
+    function findProblemMessagesByLocationId($id);
 
 }
