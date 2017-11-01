@@ -11,14 +11,18 @@ import {
 import { Link } from 'react-router-dom';
 
 const Row = (props) => (
+
     <TableRow key={props.entry.id}>
+
         <TableRowColumn>{props.entry.id}</TableRowColumn>
-        <TableRowColumn>{props.entry.name}</TableRowColumn>
-        <TableRowColumn><Link to="/problemmessages">Problem</Link></TableRowColumn>
-        <TableRowColumn><Link to="/statusmessages">Status</Link></TableRowColumn>
+
+        <TableRowColumn><Link to={`/locations/${props.entry.id}`}>{props.entry.name}</Link></TableRowColumn>
+        <TableRowColumn><Link to={`/locations/${props.entry.id}/problems`}>Problems</Link></TableRowColumn>
+        <TableRowColumn><Link to={`/locations/${props.entry.id}/status`}>Status</Link></TableRowColumn>
 
     </TableRow>
-)
+
+);
 
 const Rows = (props) => props.entries.map(e => (
     <Row entry={e} delete={props.delete} />

@@ -3,6 +3,9 @@ import axios from 'axios';
 class HttpService {
     userId = null;
     baseUrl = 'http://localhost/WP1/api.php';
+    parts = null;
+    location = null;
+
     constructor(userId) {
         this.userId = userId;
     }
@@ -17,10 +20,24 @@ class HttpService {
 
     }
 
-    getProblemMessages() {
-        console.log(axios.get(`${this.baseUrl}/problemmessages`).then(r => r.data));
-        return axios.get(`${this.baseUrl}/problemmessages`).then(r => r.data);
+    getLocationbyId(){
+        this.parts =  window.location.pathname.split('/');
+       this.location = this.parts.pop();
+       console.log(this.location);
+        console.log(axios.get(`${this.baseUrl}/locations/${this.location}`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/locations/${this.location}`).then(r => r.data);
+    }
 
+    getProblemMessagesByLocationId(id) {
+        console.log(`${this.baseUrl}/location/${id}/problems`);
+        console.log(axios.get(`${this.baseUrl}/location/${id}/problems`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/location/${id}/problems`).then(r => r.data);
+    }
+
+    getStatusMessagesByLocationId(id) {
+        console.log(`${this.baseUrl}/location/${id}/status`);
+        console.log(axios.get(`${this.baseUrl}/location/${id}/status`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/location/${id}/status`).then(r => r.data);
     }
 
     addLocationEntry(id, name) {

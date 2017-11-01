@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import DashboardPage from './dashboard/dashboard.page';
 import LocationsPage from './locations/locations.page';
+import LocationPage from './locations/location.page';
 import CaloriesAddPage from './locations/calories-add.page';
 import ProblemsPage from './problems/problems.page';
 import SettingsPage from './settings/settings.page';
@@ -48,9 +49,12 @@ class Layout extends Component {
                         </MenuItem>
                     </Drawer>
                     <Route exact={true} path="/" component={DashboardPage} />
-                    <Route path="/locations" component={LocationsPage} />
+                    <Route exact={true} path='/locations' component={LocationsPage}/>
+                    <Route exact={true} path='/locations/:locationId' component={LocationPage}/>
+                    <Route exact={true} path='/locations/:locationId/problems' component={ProblemsPage}/>
+                    <Route path='/locations/:locationId/status' component={StatusPage}/>
                     <Route path="/statusmessages" component={StatusPage} />
-                    <Route path="/problemmessages" component={ProblemsPage} />
+                    <Route exact path='/problemmessages' component={ProblemsPage}/>
                     <Route path="/calories/add" component={CaloriesAddPage} />
                     <Route path="/settings" component={SettingsPage} />
 
