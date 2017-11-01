@@ -10,9 +10,7 @@ import {
 import DashboardPage from './dashboard/dashboard.page';
 import LocationsPage from './locations/locations.page';
 import LocationPage from './locations/location.page';
-import CaloriesAddPage from './locations/calories-add.page';
 import ProblemsPage from './problems/problems.page';
-import SettingsPage from './settings/settings.page';
 import StatusPage from './status/status.page';
 import { connect } from 'react-redux';
 
@@ -55,8 +53,6 @@ class Layout extends Component {
                     <Route path='/locations/:locationId/status' component={StatusPage}/>
                     <Route path="/statusmessages" component={StatusPage} />
                     <Route exact path='/problemmessages' component={ProblemsPage}/>
-                    <Route path="/calories/add" component={CaloriesAddPage} />
-                    <Route path="/settings" component={SettingsPage} />
 
                 </div>
             </Router>

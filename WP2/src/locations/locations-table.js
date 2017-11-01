@@ -30,7 +30,7 @@ const Rows = (props) => props.entries.map(e => (
 
 const LocationsTable = (props) => (
     <Table>
-        <TableHeader>
+        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
                 <TableHeaderColumn>Id</TableHeaderColumn>
                 <TableHeaderColumn>Name</TableHeaderColumn>
