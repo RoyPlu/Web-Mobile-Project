@@ -5,15 +5,19 @@ require 'vendor/altorouter/altorouter/AltoRouter.php';
 
 use api\controller\LocationsController;
 use api\controller\ProblemMessageController;
+use api\controller\ScoreController;
 use api\model\Location;
 use api\model\PDOLocationRepository;
 use api\model\PDOProblemMessageRepository;
 use api\model\PDOStatusMessageRepository;
+use api\model\PDOScoreRepository;
 use api\model\ProblemMessage;
 use api\model\StatusMessage;
+use api\model\Score;
 use api\view\LocationJsonView;
 use api\view\ProblemMessageJsonView;
 use api\view\StatusMessageJsonView;
+use api\view\ScoreJsonView;
 use api\controller\StatusMessageController;
 
 $username = "root";
@@ -49,8 +53,14 @@ try {
     $problemMessageJsonView = new ProblemMessageJsonView();
     $problemMessageController = new ProblemMessageController($problemMessagePDORepository, $problemMessageJsonView);
 
+    //scores
+    $scorePDORepository = new PDOScoreRepository($pdo);
+    $scoreJsonView = new ScoreJsonView();
+    $scoreController = new ScoreController($scorePDORepository, $scoreJsonView);
+
     $router = new AltoRouter();
     $router->setBasePath('/WP1/api.php');
+
 
     $router->map('GET', '/locations/[i:id]',
         function ($id) use (&$locationsController) {
@@ -144,6 +154,40 @@ try {
             $insertedProblemMessage->setDate($data['date']);
 
             $problemMessageController->handleCreateStatusMessage($insertedProblemMessage);
+        }
+    );
+
+    $router->map('GET', '/scores',
+        function () use (&$scoreController) {
+            $scoreController->handleFindScores();
+        }
+    );
+
+    $router->map('GET', '/score/[i:id]',
+        function($id) use (&$scoreController) {
+            $scoreController->handleFindScoreById($id);
+        }
+    );
+
+    $router->map('POST', '/insertscore/',
+        function() use (&$scoreController) {
+            $data = json_decode(file_get_contents('php://input'));
+            $data = (array)$data[0];
+
+            var_dump($data);
+
+            $insertedScore = new Score();
+            $insertedScore->setLocationId($data['location_id']);
+            $insertedScore->setScore($data['score']);
+            $insertedScore->setDate($data['date']);
+
+            $scoreController->handleCreateScore($insertedScore);
+        }
+    );
+
+    $router->map('GET', '/location/[i:id]/scores',
+        function ($id) use (&$scoreController) {
+            $scoreController->handleFindScoresByLocationId($id);
         }
     );
 
