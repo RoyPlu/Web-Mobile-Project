@@ -8,8 +8,8 @@
 
 namespace api\controller;
 
-use api\model\ProblemMessage;
-use api\model\ProblemMessageRepository;
+use api\model\entity\ProblemMessage;
+use api\model\repository\ProblemMessageRepository;
 use api\view\View;
 
 class ProblemMessageController
@@ -36,12 +36,6 @@ class ProblemMessageController
 
     public function handleCreateStatusMessage(ProblemMessage $problemMessage) {
         $this->problemMessageRepository->insertProblemMessage($problemMessage);
-    }
-
-    public function handleFindProblemMessagesByLocationId($id)
-    {
-        $problemMessages = $this->problemMessageRepository->findProblemMessagesByLocationId($id);
-        $this->view->show(['problemmessages' => $problemMessages]);
     }
 
 }

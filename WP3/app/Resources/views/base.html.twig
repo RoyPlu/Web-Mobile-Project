@@ -14,7 +14,7 @@
         <style>
             body {
                 font-family: 'Montserrat', sans-serif;
-                background-color: #e7e5e4;
+                background-color: #9fa2a0;
             }
         </style>
     </head>
@@ -36,9 +36,6 @@
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class=""><a href="../locations">Locations</a></li>
-                                {% if is_granted('ROLE_ADMIN') %}
-                                <li class=""><a href="../admin">Admin page</a></li>
-                                {% endif %}
                             </ul>
                             {% if app.user %}
                                 <ul class="nav pull-right">

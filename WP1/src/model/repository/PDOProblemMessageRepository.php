@@ -6,7 +6,9 @@
  * Time: 10:17
  */
 
-namespace api\model;
+namespace api\model\repository;
+
+use api\model\entity\ProblemMessage;
 
 class PDOProblemMessageRepository implements ProblemMessageRepository
 {

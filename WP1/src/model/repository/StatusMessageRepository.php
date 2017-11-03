@@ -6,8 +6,10 @@
  * Time: 0:27
  */
 
-namespace api\model;
+namespace api\model\repository;
 
+
+use api\model\entity\StatusMessage;
 
 interface StatusMessageRepository
 {

@@ -19,11 +19,85 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LocationRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/repository/LocationRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProblemMessageRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/repository/ProblemMessageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatusMessageRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/repository/StatusMessageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PDOLocationRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/repository/PDOLocationRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-462">
+              <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+              <folding>
+                <element signature="e#6#90#0#PHP" expanded="true" />
+                <marker date="1508492888922" expanded="true" signature="469:505" ph="SELECT * FRO... events" />
+                <marker date="1508492888922" expanded="true" signature="1043:1057" ph="SELECT * FRO... events" />
+                <marker date="1508492888922" expanded="true" signature="1043:1066" ph="SELECT * FRO... locations" />
+                <marker date="1508492888922" expanded="true" signature="1651:1689" ph="INSERT INTO locations... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PDOProblemMessageRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/repository/PDOProblemMessageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+              <folding>
+                <marker date="1508492888885" expanded="true" signature="487:529" ph="SELECT * FRO... problemmessages" />
+                <marker date="1508492888885" expanded="true" signature="1167:1196" ph="SELECT * FRO... problemmessages" />
+                <marker date="1508492888885" expanded="true" signature="2057:2137" ph="INSERT INTO statusmessages... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PDOStatusMessageRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/repository/PDOStatusMessageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+              <folding>
+                <marker date="1508492888901" expanded="true" signature="490:531" ph="SELECT * FRO... statusmessages" />
+                <marker date="1508492888901" expanded="true" signature="1123:1151" ph="SELECT * FRO... statusmessages" />
+                <marker date="1508492888901" expanded="true" signature="1927:1995" ph="INSERT INTO statusmessages... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="189" column="54" lean-forward="false" selection-start-line="189" selection-start-column="54" selection-end-line="189" selection-end-column="54" />
+            <state relative-caret-position="258">
+              <caret line="119" column="47" lean-forward="false" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
               <folding>
                 <element signature="e#130#169#0#PHP" expanded="true" />
               </folding>
@@ -31,102 +105,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScoreController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/ScoreController.php">
+      <file leaf-file-name="Location.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/entity/Location.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="33" column="46" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-              <folding>
-                <element signature="e#119#139#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusMessageJsonView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/StatusMessageJsonView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="39" column="55" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="55" />
+            <state relative-caret-position="22">
+              <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScoreJsonView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/ScoreJsonView.php">
+      <file leaf-file-name="ProblemMessage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/entity/ProblemMessage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusMessageRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/StatusMessageRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="49" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="View.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/View.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="66">
+              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="StatusMessage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/StatusMessage.php">
+        <entry file="file://$PROJECT_DIR$/src/model/entity/StatusMessage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-311">
-              <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScoreRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/ScoreRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PDOScoreRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/PDOScoreRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-                <marker date="1509631979747" expanded="true" signature="418:433" ph="SELECT * FRO... statusmessages" />
-                <marker date="1509631979747" expanded="true" signature="418:451" ph="SELECT * FRO... scores" />
-                <marker date="1509631979747" expanded="true" signature="1026:1046" ph="SELECT * FRO... scores" />
-                <marker date="1509631979747" expanded="true" signature="1763:1823" ph="INSERT INTO scores... " />
-                <marker date="1509631979747" expanded="true" signature="2272:2314" ph="SELECT * FRO... scores" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Score.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/Score.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="66">
+              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -140,12 +143,7 @@
       <find>locationid</find>
       <find>$locationJsonView</find>
       <find>json</find>
-      <find>statusMessage</find>
-      <find>Status</find>
     </findStrings>
-    <replaceStrings>
-      <replace>score</replace>
-    </replaceStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
@@ -153,7 +151,7 @@
     </commandsHistory>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -170,33 +168,37 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/location.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/LocationController.php" />
         <option value="$PROJECT_DIR$/pages/showLocations.html" />
-        <option value="$PROJECT_DIR$/src/model/LocationRepository.php" />
         <option value="$PROJECT_DIR$/src/view/View.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/model/Location.php" />
         <option value="$PROJECT_DIR$/src/model/Status.php" />
         <option value="$PROJECT_DIR$/src/controller/api/model/StatusMessageRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/StatusMessageRepository.php" />
         <option value="$PROJECT_DIR$/src/model/StatusMessage.php" />
-        <option value="$PROJECT_DIR$/src/controller/LocationsController.php" />
-        <option value="$PROJECT_DIR$/src/model/PDOLocationRepository.php" />
         <option value="$PROJECT_DIR$/src/model/ProblemMessageRepository.php" />
         <option value="$PROJECT_DIR$/src/view/Problm.php" />
         <option value="$PROJECT_DIR$/src/model/ProblemMessage.php" />
-        <option value="$PROJECT_DIR$/src/controller/ProblemMessageController.php" />
+        <option value="$PROJECT_DIR$/src/model/PDOStatusMessageRepository.php" />
         <option value="$PROJECT_DIR$/src/model/PDOProblemMessageRepository.php" />
+        <option value="$PROJECT_DIR$/src/view/StatusMessageJsonView.php" />
         <option value="$PROJECT_DIR$/src/view/ProblemMessageJsonView.php" />
         <option value="$PROJECT_DIR$/src/view/LocationJsonView.php" />
         <option value="$USER_HOME$/Desktop/html_phpunit/test/model/PDOPersonRepositoryTest.php" />
+        <option value="$PROJECT_DIR$/src/model/LocationRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/PDOLocationRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/Location.php" />
+        <option value="$PROJECT_DIR$/src/model/entity/Location.php" />
+        <option value="$PROJECT_DIR$/src/model/entity/ProblemMessage.php" />
+        <option value="$PROJECT_DIR$/src/model/entity/StatusMessage.php" />
+        <option value="$PROJECT_DIR$/src/controller/LocationsController.php" />
+        <option value="$PROJECT_DIR$/src/controller/ProblemMessageController.php" />
         <option value="$PROJECT_DIR$/src/controller/StatusMessageController.php" />
-        <option value="$PROJECT_DIR$/src/model/StatusMessageRepository.php" />
-        <option value="$PROJECT_DIR$/src/model/PDOStatusMessageRepository.php" />
-        <option value="$PROJECT_DIR$/src/controller/ScoreController.php" />
-        <option value="$PROJECT_DIR$/src/view/StatusMessageJsonView.php" />
-        <option value="$PROJECT_DIR$/src/view/ScoreJsonView.php" />
         <option value="$PROJECT_DIR$/api.php" />
-        <option value="$PROJECT_DIR$/src/model/PDOScoreRepository.php" />
-        <option value="$PROJECT_DIR$/src/model/ScoreRepository.php" />
-        <option value="$PROJECT_DIR$/src/model/Score.php" />
+        <option value="$PROJECT_DIR$/src/model/repository/PDOLocationRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/repository/PDOProblemMessageRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/repository/PDOStatusMessageRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/repository/LocationRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/repository/ProblemMessageRepository.php" />
+        <option value="$PROJECT_DIR$/src/model/repository/StatusMessageRepository.php" />
       </list>
     </option>
   </component>
@@ -238,10 +240,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="835" />
-    <option name="y" value="10" />
-    <option name="width" value="1059" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -258,39 +259,41 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -304,11 +307,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -319,14 +322,40 @@
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WP1" />
+              <option name="myItemId" value="Web-Mobile-Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web-Mobile-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web-Mobile-Project" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -340,13 +369,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/pxl-workshop-react" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="SearchEverywhereHistoryKey" value="terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;composer&#9;ACTION&#9;ComposerGroup" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
@@ -355,13 +382,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP1\src\view" />
-      <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP1\src\controller" />
-      <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP1\src\model" />
       <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\src\model" />
       <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\src\view" />
+      <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\pages" />
+      <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\src\controller" />
+      <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Web-Mobile-Project\src\model\repository" />
+      <recent name="C:\xampp\htdocs\Web-Mobile-Project\src\model\entity" />
       <recent name="C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\app\Resources\views" />
       <recent name="C:\symfony projects\voorbeeld1\src\AppBundle\Entity" />
       <recent name="C:\symfony projects\voorbeeld1\src\AppBundle\Entity\Entity" />
@@ -453,26 +482,22 @@
       <workItem from="1507798950066" duration="3226000" />
       <workItem from="1507804188637" duration="1577000" />
       <workItem from="1507877927169" duration="10283000" />
-      <workItem from="1507888879950" duration="27013000" />
-      <workItem from="1508249209666" duration="151000" />
-      <workItem from="1508487305430" duration="314000" />
-      <workItem from="1508845715828" duration="27000" />
-      <workItem from="1509000790057" duration="280000" />
-      <workItem from="1509010717544" duration="1579000" />
-      <workItem from="1509540687726" duration="4192000" />
+      <workItem from="1507888879950" duration="28283000" />
+      <workItem from="1508486852380" duration="913000" />
+      <workItem from="1508492222864" duration="813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64307000" />
+    <option name="totallyTimeSpent" value="60045000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="835" y="10" width="1059" height="1040" extended-state="0" />
+    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3240652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18568353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19569893" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19592299" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -522,6 +547,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Entity.Location.orm.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Product.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Location.php" />
+    <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/hello.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/Entity/EntityRepository.php" />
@@ -555,6 +585,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/showLocations.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="26" column="53" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -611,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,43 +655,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/api/model/StatusMessageRepository.php" />
     <entry file="file://$PROJECT_DIR$/src/view/Problm.php" />
-    <entry file="file://$USER_HOME$/Desktop/html_phpunit/test/model/PDOPersonDAOTest.php" />
-    <entry file="file://$USER_HOME$/Desktop/html_phpunit/test/model/PDOPersonRepositoryTest.php" />
-    <entry file="file://$PROJECT_DIR$/pages/showLocations.html" />
-    <entry file="file://$PROJECT_DIR$/src/model/LocationRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/view/View.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="154">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ProblemMessage.php">
+    <entry file="file://$USER_HOME$/Desktop/html_phpunit/test/model/PDOPersonDAOTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+        <state relative-caret-position="374">
+          <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/html_phpunit/test/model/PDOPersonRepositoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/LocationJsonView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/LocationsController.php">
+    <entry file="file://$PROJECT_DIR$/src/view/StatusMessageJsonView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="e#33#66#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="444">
+          <caret line="33" column="64" lean-forward="true" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/ProblemMessageJsonView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="594">
           <caret line="40" column="55" lean-forward="false" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
           <folding>
             <element signature="e#6#90#0#PHP" expanded="false" />
@@ -663,179 +709,129 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/LocationsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="e#33#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ProblemMessageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="610">
+          <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
           <folding>
-            <element signature="e#119#148#0#PHP" expanded="true" />
+            <element signature="e#119#155#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ProblemMessageRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/PDOStatusMessageRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="83" column="37" lean-forward="false" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
-          <folding>
-            <marker date="1509540940384" expanded="true" signature="442:483" ph="SELECT * FRO... statusmessages" />
-            <marker date="1509540940384" expanded="true" signature="1075:1103" ph="SELECT * FRO... statusmessages" />
-            <marker date="1509540940384" expanded="true" signature="1879:1947" ph="INSERT INTO statusmessages... " />
-            <marker date="1509540940384" expanded="true" signature="2405:2455" ph="SELECT * FRO... statusmessages" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/LocationJsonView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/StatusMessageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="440">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="e#6#90#0#PHP" expanded="true" />
-            <element signature="e#119#147#0#PHP" expanded="true" />
+            <element signature="e#119#154#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/PDOProblemMessageRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/model/entity/Location.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="77" column="4" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="93" selection-end-column="5" />
-          <folding>
-            <marker date="1509464336063" expanded="true" signature="438:480" ph="SELECT * FRO... problemmessages" />
-            <marker date="1509464336063" expanded="true" signature="1118:1147" ph="SELECT * FRO... problemmessages" />
-            <marker date="1509464336063" expanded="true" signature="2008:2088" ph="INSERT INTO problemmessages... " />
-            <marker date="1509464336063" expanded="true" signature="2613:2664" ph="SELECT * FRO... problemmessages" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/PDOLocationRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
-          <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
-            <marker date="1508249173287" expanded="true" signature="904:940" ph="SELECT * FRO... locations" />
-            <marker date="1508249173287" expanded="true" signature="1478:1501" ph="SELECT * FRO... locations" />
-            <marker date="1508249173287" expanded="true" signature="2086:2124" ph="INSERT INTO locations... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="22">
+          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/StatusMessageRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/model/entity/ProblemMessage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="49" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="49" />
+        <state relative-caret-position="66">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/StatusMessage.php">
+    <entry file="file://$PROJECT_DIR$/src/model/entity/StatusMessage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-311">
-          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ScoreController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="33" column="46" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="e#119#139#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/StatusMessageJsonView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="39" column="55" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/ScoreJsonView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="66">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="189" column="54" lean-forward="false" selection-start-line="189" selection-start-column="54" selection-end-line="189" selection-end-column="54" />
+        <state relative-caret-position="258">
+          <caret line="119" column="47" lean-forward="false" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
           <folding>
             <element signature="e#130#169#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ScoreRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/model/repository/PDOProblemMessageRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state relative-caret-position="506">
+          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
-            <element signature="e#6#89#0#PHP" expanded="true" />
+            <marker date="1508492888885" expanded="true" signature="487:529" ph="SELECT * FRO... problemmessages" />
+            <marker date="1508492888885" expanded="true" signature="1167:1196" ph="SELECT * FRO... problemmessages" />
+            <marker date="1508492888885" expanded="true" signature="2057:2137" ph="INSERT INTO statusmessages... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/PDOScoreRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/model/repository/PDOStatusMessageRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        <state relative-caret-position="594">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding>
-            <element signature="e#6#89#0#PHP" expanded="true" />
-            <marker date="1509631979747" expanded="true" signature="418:433" ph="SELECT * FRO... statusmessages" />
-            <marker date="1509631979747" expanded="true" signature="418:451" ph="SELECT * FRO... scores" />
-            <marker date="1509631979747" expanded="true" signature="1026:1046" ph="SELECT * FRO... scores" />
-            <marker date="1509631979747" expanded="true" signature="1763:1823" ph="INSERT INTO scores... " />
-            <marker date="1509631979747" expanded="true" signature="2272:2314" ph="SELECT * FRO... scores" />
+            <marker date="1508492888901" expanded="true" signature="490:531" ph="SELECT * FRO... statusmessages" />
+            <marker date="1508492888901" expanded="true" signature="1123:1151" ph="SELECT * FRO... statusmessages" />
+            <marker date="1508492888901" expanded="true" signature="1927:1995" ph="INSERT INTO statusmessages... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Score.php">
+    <entry file="file://$PROJECT_DIR$/src/model/repository/PDOLocationRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="-462">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+            <marker date="1508492888922" expanded="true" signature="469:505" ph="SELECT * FRO... events" />
+            <marker date="1508492888922" expanded="true" signature="1043:1057" ph="SELECT * FRO... events" />
+            <marker date="1508492888922" expanded="true" signature="1043:1066" ph="SELECT * FRO... locations" />
+            <marker date="1508492888922" expanded="true" signature="1651:1689" ph="INSERT INTO locations... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/repository/LocationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/repository/ProblemMessageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/repository/StatusMessageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>

@@ -6,8 +6,10 @@
  * Time: 10:14
  */
 
-namespace api\model;
+namespace api\model\repository;
 
+
+use api\model\entity\ProblemMessage;
 
 interface ProblemMessageRepository
 {

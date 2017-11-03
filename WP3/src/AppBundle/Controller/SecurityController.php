@@ -31,7 +31,7 @@ class SecurityController extends Controller
      */
     public function registerAction()
     {
-        return $this->render('FOSUserBundle:Registration:register.html.twig', array(
+        return $this->render('FOSUserBundle:Security:register.html.twig', array(
             // ...
         ));
     }
