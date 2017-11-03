@@ -15,11 +15,10 @@ const Row = (props) => (
     <TableRow key={props.entry.id}>
 
         <TableRowColumn>{props.entry.id}</TableRowColumn>
-
         <TableRowColumn><Link to={`/locations/${props.entry.id}`}>{props.entry.name}</Link></TableRowColumn>
-        <TableRowColumn><button><Link to={`/locations/${props.entry.id}/problems`}>Problems</Link></button></TableRowColumn>
-        <TableRowColumn><button><Link to={`/locations/${props.entry.id}/status`}>Status</Link></button></TableRowColumn>
-
+        <TableRowColumn><button class="problemButton"><Link to={`/locations/${props.entry.id}/problems`}>Problems</Link></button></TableRowColumn>
+        <TableRowColumn><button class="statusButton"><Link to={`/locations/${props.entry.id}/status`}>Status</Link></button></TableRowColumn>
+        <TableRowColumn><button class="scoreButton"><Link to={`/locations/${props.entry.id}/scores`}>Score</Link></button></TableRowColumn>
     </TableRow>
 
 );
@@ -36,6 +35,7 @@ const LocationsTable = (props) => (
                 <TableHeaderColumn>Name</TableHeaderColumn>
                 <TableHeaderColumn>Problems</TableHeaderColumn>
                 <TableHeaderColumn>Status</TableHeaderColumn>
+                <TableHeaderColumn>Score</TableHeaderColumn>
             </TableRow>
         </TableHeader>
         <TableBody>

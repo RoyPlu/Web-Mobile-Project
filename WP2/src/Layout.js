@@ -11,6 +11,7 @@ import DashboardPage from './dashboard/dashboard.page';
 import LocationsPage from './locations/locations.page';
 import LocationPage from './locations/location.page';
 import ProblemsPage from './problems/problems.page';
+import ScoresPage from './scores/scores.page';
 import StatusPage from './status/status.page';
 import { connect } from 'react-redux';
 
@@ -46,6 +47,7 @@ class Layout extends Component {
                     <Route exact={true} path='/locations/:locationId' component={LocationPage}/>
                     <Route exact={true} path='/locations/:locationId/problems' component={ProblemsPage}/>
                     <Route path='/locations/:locationId/status' component={StatusPage}/>
+                    <Route path='/locations/:locationId/scores' component={ScoresPage}/>
                     <Route path="/statusmessages" component={StatusPage} />
                     <Route exact path='/problemmessages' component={ProblemsPage}/>
 

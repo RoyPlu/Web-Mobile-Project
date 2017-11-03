@@ -23,7 +23,7 @@ class LocationPage extends Component {
     render() {
         const fetchedEntries = this.props.locationEntries;
         return (
-            <div>
+            <div class="card">
                 <h1>Id: {fetchedEntries.id}</h1>
                 <h1>Name: {fetchedEntries.name}</h1>
             </div>

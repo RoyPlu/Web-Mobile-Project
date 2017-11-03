@@ -40,6 +40,12 @@ class HttpService {
         return axios.get(`${this.baseUrl}/location/${id}/status`).then(r => r.data);
     }
 
+    getScoresByLocationId(id) {
+        console.log(`${this.baseUrl}/location/${id}/scores`);
+        console.log(axios.get(`${this.baseUrl}/location/${id}/scores`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/location/${id}/scores`).then(r => r.data);
+    }
+
     addLocationEntry(id, name) {
         return axios.post(`${this.baseUrl}/calorieEntries`, { id: id, userId: this.userId, name:name });
     }

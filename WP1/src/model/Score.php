@@ -17,7 +17,7 @@ class Score
     private $LocationId = null;
     private $Date = null;
 
-    public function __construct($scoreId = null, $locationId = null, $date = null)
+    public function __construct($scoreId = null, $locationId = null, $score = null, $date = null)
     {
         $this->ScoreId = $scoreId;
         $this->Score = $score;

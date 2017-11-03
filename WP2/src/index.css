@@ -12,6 +12,10 @@ html, body{
     background-color: rgba(220, 213, 175, 0.18);
 }
 
+.table {
+    font-size: 30px;
+}
+
 .main {
     text-align: center;
 }
@@ -36,3 +40,28 @@ html, body{
         color: #131313;
         letter-spacing: .15em;
     }
+
+    a {
+        text-decoration: none;
+        color: #363636;
+    }
+
+button {
+    background-color: darkgrey;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+.problemButton {
+    background-color: rgba(249, 44, 44, 0.65);
+}
+
+.statusButton {
+    background-color: rgba(62, 148, 175, 0.72);
+}
