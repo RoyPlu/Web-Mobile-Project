@@ -72,4 +72,21 @@ class PDOStatusMessageRepository implements StatusMessageRepository
             return null;
         }
     }
+
+    function findStatusMessagesByLocationId($id)
+    {
+        try {
+            $statement = $this->connection->prepare('SELECT * FROM statusmessages WHERE location_id = ?');
+            $statement->bindParam(1, $id, \PDO::PARAM_INT);
+            $statement->execute();
+            $eventArray = array();
+            $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
+            for ($i = 0; $i < count($results); $i++) {
+                $eventArray[$i] = new StatusMessage($results[$i]['id'], $results[$i]['location_id'], $results[$i]['status'], $results[$i]['date']);
+            }
+            return $eventArray;
+        } catch (\Exception $ex) {
+            throw $ex;
+        }
+    }
 }

@@ -75,4 +75,21 @@ class PDOProblemMessageRepository implements ProblemMessageRepository
         }
     }
 
+    function findProblemMessagesByLocationId($id)
+    {
+        try {
+            $statement = $this->connection->prepare('SELECT * FROM problemmessages WHERE location_id = ?');
+            $statement->bindParam(1, $id, \PDO::PARAM_INT);
+            $statement->execute();
+            $eventArray = array();
+            $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
+            for ($i = 0; $i < count($results); $i++) {
+                $eventArray[$i] = new ProblemMessage($results[$i]['id'], $results[$i]['location_id'], $results[$i]['problem'],
+                    $results[$i]['solved'], $results[$i]['date']);
+            }
+            return $eventArray;
+        } catch (\Exception $ex) {
+            throw $ex;
+        }
+    }
 }

@@ -15,5 +15,5 @@ interface StatusMessageRepository
     function findStatusMessageById($id);
     function findStatusMessages();
     function insertStatusMessage(StatusMessage $statusMessage);
-
+    function findStatusMessagesByLocationId($id);
 }

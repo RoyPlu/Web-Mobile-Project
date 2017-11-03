@@ -6,6 +6,7 @@ class LocationJsonView implements View
 {
     public function show(array $data)
     {
+		header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
         if (isset($data['location'])) {
             $event = $data['location'];
