@@ -14,12 +14,6 @@ class ProblemMessage
 {
 
     /**
-     * @ORM\ManyToOne(targetEntity="Location", inversedBy="problemMessages")
-     * @ORM\JoinColumn(name="locationId", referencedColumnName="id")
-     */
-    private $location;
-
-    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -29,7 +23,12 @@ class ProblemMessage
     private $id;
 
     /**
-     * @var string
+     * @ORM\ManyToOne(targetEntity="Location", inversedBy="problemMessages")
+     * @ORM\JoinColumn(name="locationId", referencedColumnName="id")
+     */
+
+    /**
+     * @var int
      *
      * @ORM\Column(name="locationId", type="integer")
      */
@@ -56,6 +55,25 @@ class ProblemMessage
      */
     private $finished;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="problemMessages")
+     * @ORM\JoinColumn(name="techId", referencedColumnName="id")
+     */
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="techId", type="integer")
+     */
+    private $techId;
+
+    /**
+     * @return int
+     */
+    public function getTechId()
+    {
+        return $this->techId;
+    }
 
     /**
      * Get id
