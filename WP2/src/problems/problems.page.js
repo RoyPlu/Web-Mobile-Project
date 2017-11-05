@@ -24,16 +24,32 @@ class ProblemsPage extends Component {
         console.log(this.state.problems);
 
         var renderedEntries = this.state.problems.map((entry) => {
-                return (
-                    <div class="card">
-                        <h1>Problem Id: {entry.id}</h1>
-                        <hr/>
-                        <h3>Location Id: {entry.location_id}</h3>
-                        <h3>Description: {entry.problem}</h3>
-                        <h3>Is solved: {entry.solved}</h3>
-                        <h3>Date: {entry.date}</h3>
-                    </div>
-                );
+
+                    if (entry.severe === true) {
+                        return (
+                        <div class="card">
+                            <h1 color="red">Problem Id: {entry.id}</h1>
+                            <hr/>
+                            <h3 color="red">Location Id: {entry.location_id}</h3>
+                            <h3 color="red">Description: {entry.problem}</h3>
+                            <h3 color="red">Is solved: {entry.solved}</h3>
+                            <h3 color="red">Date: {entry.date}</h3>
+                            <h3 color="red">Severe: {entry.severe}</h3>
+                        </div>
+                        );
+                    } else {
+                        return (
+                            <div class="card">
+                                <h1>Problem Id: {entry.id}</h1>
+                                <hr/>
+                                <h3>Location Id: {entry.location_id}</h3>
+                                <h3>Description: {entry.problem}</h3>
+                                <h3>Is solved: {entry.solved}</h3>
+                                <h3>Date: {entry.date}</h3>
+                                <h3>Severe: {entry.severe}</h3>
+                            </div>
+                        );
+                    }
         });
         return (
             <div>

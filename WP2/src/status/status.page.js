@@ -31,6 +31,7 @@ class StatusPage extends Component {
                     <h3>Location Id: {entry.location_id}</h3>
                     <h3>Description: {entry.status}</h3>
                     <h3>Date: {entry.date}</h3>
+                    <h3>Date: {entry.end_date}</h3>
                 </div>
             );
         });
