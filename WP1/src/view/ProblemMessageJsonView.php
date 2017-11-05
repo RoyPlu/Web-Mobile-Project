@@ -22,7 +22,8 @@ class ProblemMessageJsonView implements View
                 'location_id' => $event->getLocationId(),
                 'problem' => $event->getProblem(),
                 'solved' => $event->isSolved(),
-                'date' => $event->getDate()]);
+                'date' => $event->getDate(),
+                'severe' => $event->isSevere()]);
         } elseif (isset($data['problemmessages'])){
             $problemMessages = $data['problemmessages'];
             $eventArr = [];
@@ -33,7 +34,8 @@ class ProblemMessageJsonView implements View
                     'location_id' => $problemMessage->getLocationId(),
                     'problem' => $problemMessage->getProblem(),
                     'solved' => $problemMessage->isSolved(),
-                    'date' => $problemMessage->getDate()]);
+                    'date' => $problemMessage->getDate(),
+                    'severe' => $problemMessage->isSevere()]);
                 $eventArr[] = $s;
 
             }

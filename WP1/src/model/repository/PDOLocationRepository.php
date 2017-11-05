@@ -29,7 +29,7 @@ class PDOLocationRepository implements LocationRepository
             if (count($results) > 0) {
                 return new Location($results[0]['id'], $results[0]['name']);
             } else {
-                throw new \Exception();
+                return null;
             }
         } catch (\Exception $ex) {
             throw $ex;
@@ -60,6 +60,7 @@ class PDOLocationRepository implements LocationRepository
             $statement->bindParam(1, $locName, \PDO::PARAM_STR);
 
             $statement->execute();
+            return $location;
         } catch (\Exception $ex) {
             var_dump($ex->getMessage());
             return null;

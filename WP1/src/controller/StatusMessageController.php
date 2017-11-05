@@ -8,8 +8,8 @@
 
 namespace api\controller;
 
-use api\model\StatusMessage;
-use api\model\StatusMessageRepository;
+use api\model\entity\StatusMessage;
+use api\model\repository\StatusMessageRepository;
 use api\view\View;
 
 class StatusMessageController

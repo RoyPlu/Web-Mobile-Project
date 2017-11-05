@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class HttpService {
     userId = null;
-    baseUrl = 'http://localhost/WP1/api.php';
+    baseUrl = 'http://localhost/Web-Mobile-Project/api.php';
     parts = null;
     location = null;
 

@@ -8,8 +8,8 @@
 
 namespace api\controller;
 
-use api\model\Score;
-use api\model\ScoreRepository;
+use api\model\entity\Score;
+use api\model\repository\ScoreRepository;
 use api\view\View;
 
 class ScoreController

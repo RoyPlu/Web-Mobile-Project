@@ -17,14 +17,16 @@ class ProblemMessage
     private $Problem = "";
     private $Solved = false;
     private $Date = null;
+    private $Severe = false;
 
-    public function __construct($problemMessageId = null, $locationId = null, $problem = "", $solved = false, $date = null)
+    public function __construct($problemMessageId = null, $locationId = null, $problem = "", $solved = false, $date = null, $severe = false)
     {
         $this->setProblemMessageId($problemMessageId);
         $this->setLocationId($locationId);
         $this->setProblem($problem);
         $this->setSolved($solved);
         $this->setDate($date);
+        $this->setSevere($severe);
     }
 
     /**
@@ -105,6 +107,22 @@ class ProblemMessage
     public function setDate($Date)
     {
         $this->Date = $Date;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSevere(): bool
+    {
+        return $this->Severe;
+    }
+
+    /**
+     * @param bool $Severe
+     */
+    public function setSevere(bool $Severe)
+    {
+        $this->Severe = $Severe;
     }
 
 }

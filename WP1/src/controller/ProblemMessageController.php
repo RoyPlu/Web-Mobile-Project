@@ -8,8 +8,8 @@
 
 namespace api\controller;
 
-use api\model\ProblemMessage;
-use api\model\ProblemMessageRepository;
+use api\model\entity\ProblemMessage;
+use api\model\repository\ProblemMessageRepository;
 use api\view\View;
 
 class ProblemMessageController

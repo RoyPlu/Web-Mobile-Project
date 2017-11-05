@@ -6,37 +6,29 @@ require 'vendor/altorouter/altorouter/AltoRouter.php';
 use api\controller\LocationsController;
 use api\controller\ProblemMessageController;
 use api\controller\ScoreController;
-use api\model\Location;
-use api\model\PDOLocationRepository;
-use api\model\PDOProblemMessageRepository;
-use api\model\PDOStatusMessageRepository;
-use api\model\PDOScoreRepository;
-use api\model\ProblemMessage;
-use api\model\StatusMessage;
-use api\model\Score;
+use api\model\entity\Location;
+use api\model\entity\ProblemMessage;
+use api\model\entity\Score;
+use api\model\entity\StatusMessage;
+use api\model\repository\PDOLocationRepository;
+use api\model\repository\PDOProblemMessageRepository;
+use api\model\repository\PDOScoreRepository;
+use api\model\repository\PDOStatusMessageRepository;
 use api\view\LocationJsonView;
 use api\view\ProblemMessageJsonView;
-use api\view\StatusMessageJsonView;
 use api\view\ScoreJsonView;
+use api\view\StatusMessageJsonView;
 use api\controller\StatusMessageController;
 
-$username = "root";
+$user = "root";
 $password = "";
-$databasename = "web-mobile-project-wp1";
+$db = "web-mobile-project";
 $hostname="localhost";
 $pdo = null;
 
 try {
-    $pdo = new PDO("mysql:host=". $hostname . ";dbname=" . $databasename, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE,
-        PDO::ERRMODE_EXCEPTION);
-		//echo 'connected';
-} catch (Exception $e) {
-    echo 'cannot connect to database';
-}
-
-
-try {
+    $pdo = new PDO("mysql:host=$hostname;dbname=$db;", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     //locations
     $locationPDORepository = new PDOLocationRepository($pdo);
@@ -59,8 +51,7 @@ try {
     $scoreController = new ScoreController($scorePDORepository, $scoreJsonView);
 
     $router = new AltoRouter();
-    $router->setBasePath('/WP1/api.php');
-
+    $router->setBasePath('/Web-Mobile-Project/api.php');
 
     $router->map('GET', '/locations/[i:id]',
         function ($id) use (&$locationsController) {
@@ -74,19 +65,25 @@ try {
         }
     );
 
-    $router->map('GET', '/location/[i:id]/problems',
+    $router->map('GET', '/locations/[i:id]/problems',
         function ($id) use (&$problemMessageController) {
             $problemMessageController->handleFindProblemMessagesByLocationId($id);
         }
     );
 
-    $router->map('GET', '/location/[i:id]/status',
+    $router->map('GET', '/locations/[i:id]/status',
         function ($id) use (&$statusMessageController) {
             $statusMessageController->handleFindStatusMessagesByLocationId($id);
         }
     );
 
-    $router->map('POST', '/insertlocation/' ,
+    $router->map('GET', '/locations/[i:id]/scores',
+        function ($id) use (&$scoreController) {
+            $scoreController->handleFindScoresByLocationId($id);
+        }
+    );
+
+    $router->map('POST', '/locations/' ,
         function() use (&$locationsController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
@@ -100,7 +97,7 @@ try {
         }
     );
 
-    $router->map('GET', '/statusmessage/[i:id]',
+    $router->map('GET', '/statusmessages/[i:id]',
         function ($id) use (&$statusMessageController) {
             $statusMessageController->handleFindStatusMessageById($id);
         }
@@ -112,7 +109,7 @@ try {
         }
     );
 
-    $router->map('POST', '/insertstatusmessage/',
+    $router->map('POST', '/statusmessages/',
         function() use (&$statusMessageController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
@@ -123,12 +120,13 @@ try {
             $insertedStatusMessage->setStatus($data['status']);
             $insertedStatusMessage->setLocationId($data['location_id']);
             $insertedStatusMessage->setDate($data['date']);
+            $insertedStatusMessage->setEndDate($data['end_date']);
 
             $statusMessageController->handleCreateStatusMessage($insertedStatusMessage);
         }
     );
 
-    $router->map('GET', '/problemmessage/[i:id]',
+    $router->map('GET', '/problemmessages/[i:id]',
         function($id) use (&$problemMessageController) {
             $problemMessageController->handleFindProblemMessageById($id);
         }
@@ -140,7 +138,7 @@ try {
         }
     );
 
-    $router->map('POST', '/insertproblemmessage/',
+    $router->map('POST', '/problemmessages/',
         function() use (&$problemMessageController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
@@ -152,6 +150,7 @@ try {
             $insertedProblemMessage->setProblem($data['problem']);
             $insertedProblemMessage->setSolved($data['solved']);
             $insertedProblemMessage->setDate($data['date']);
+            $insertedProblemMessage->setSevere($data['severe']);
 
             $problemMessageController->handleCreateStatusMessage($insertedProblemMessage);
         }
@@ -163,13 +162,13 @@ try {
         }
     );
 
-    $router->map('GET', '/score/[i:id]',
+    $router->map('GET', '/scores/[i:id]',
         function($id) use (&$scoreController) {
             $scoreController->handleFindScoreById($id);
         }
     );
 
-    $router->map('POST', '/insertscore/',
+    $router->map('POST', '/scores/',
         function() use (&$scoreController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
@@ -182,12 +181,6 @@ try {
             $insertedScore->setDate($data['date']);
 
             $scoreController->handleCreateScore($insertedScore);
-        }
-    );
-
-    $router->map('GET', '/location/[i:id]/scores',
-        function ($id) use (&$scoreController) {
-            $scoreController->handleFindScoresByLocationId($id);
         }
     );
 

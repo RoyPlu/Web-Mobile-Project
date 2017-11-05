@@ -1,9 +1,9 @@
 <?php
 namespace api\controller;
 
-use api\model\LocationRepository;
+use api\model\entity\Location;
+use api\model\repository\LocationRepository;
 use api\view\View;
-use api\model\Location;
 
 class LocationsController
 {
@@ -38,9 +38,4 @@ class LocationsController
         $this->locationRepository->insertLocation($location);
     }
 
-    public function handleDeleteLocation($id)
-    {
-        $this->locationRepository->deleteLocation($id);
-        $this->view->show(['deleteMessage'=>$id]);
-    }
 }

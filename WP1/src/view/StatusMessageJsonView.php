@@ -9,6 +9,8 @@
 namespace api\view;
 
 
+use PHPUnit\Framework\Error\Warning;
+
 class StatusMessageJsonView implements View
 {
 
@@ -22,7 +24,8 @@ class StatusMessageJsonView implements View
             echo json_encode(['id' => $event->getStatusMessageId(),
                 'location_id' => $event->getLocationId(),
                     'status' => $event->getStatus(),
-                        'date' => $event->getDate()]);
+                        'date' => $event->getDate(),
+                            'end_date' => $event->getEndDate()]);
         } elseif (isset($data['statusmessages'])){
             $statusMessages = $data['statusmessages'];
             $eventArr = [];
@@ -32,7 +35,8 @@ class StatusMessageJsonView implements View
                 $s = json_encode(['id' => $statusMessage->getStatusMessageId(),
                     'location_id' => $statusMessage->getLocationId(),
                         'status' => $statusMessage->getStatus(),
-                            'date' => $statusMessage->getDate()]);
+                            'date' => $statusMessage->getDate(),
+                                'end_date' => $statusMessage->getEndDate()]);
                 $eventArr[] = $s;
 
             }
