@@ -41,7 +41,7 @@ class PDOProblemMessageRepository implements ProblemMessageRepository
     function findProblemMessages()
     {
         try {
-            $statement = $this->connection->prepare('SELECT * FROM problemmessages');
+            $statement = $this->connection->prepare('SELECT * FROM problemmessages ORDER BY severe DESC');
             $statement->execute();
             $eventArray = array();
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
@@ -84,7 +84,7 @@ class PDOProblemMessageRepository implements ProblemMessageRepository
     function findProblemMessagesByLocationId($id)
     {
         try {
-            $statement = $this->connection->prepare('SELECT * FROM problemmessages WHERE location_id = ?');
+            $statement = $this->connection->prepare('SELECT * FROM problemmessages WHERE location_id = ?  ');
             $statement->bindParam(1, $id, \PDO::PARAM_INT);
             $statement->execute();
             $eventArray = array();
