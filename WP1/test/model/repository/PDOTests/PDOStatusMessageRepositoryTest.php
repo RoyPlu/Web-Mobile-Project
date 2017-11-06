@@ -53,7 +53,7 @@ class PDOStatusMessageRepositoryTest extends TestCase
         $status = 'Goed';
         $date = '2017-03-12';
         $endDate = '2017-05-24';
-        $statusMessage = new StatusMessage($id, $locationId, $status, $date);
+        $statusMessage = new StatusMessage($id, $locationId, $status, $date, $endDate);
 
         $this->connection->exec("INSERT INTO statusmessages (id, location_id, status, date, end_date) 
                                   VALUES ($id, $locationId, '$status', '$date', '$endDate')");

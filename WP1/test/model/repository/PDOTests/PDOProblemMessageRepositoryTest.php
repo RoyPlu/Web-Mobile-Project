@@ -36,10 +36,12 @@ class PDOProblemMessageRepositoryTest extends TestCase
         $problem = 'Banken verouderd';
         $date = null;
         $solved = 1;
-        $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date);
+        $severe = true;
 
-        $this->connection->exec("INSERT INTO problemmessages(id, location_id, problem, solved, date)
-                                  VALUES ($id, $locationId, '$problem', $solved, '$date')");
+        $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date, $severe);
+
+        $this->connection->exec("INSERT INTO problemmessages(id, location_id, problem, solved, date, severe)
+                                  VALUES ($id, $locationId, '$problem', $solved, '$date', '$severe')");
         $problemMessageRepository = new PDOProblemMessageRepository($this->connection);
 
         $actualProblemMessage = $problemMessageRepository->findProblemMessages();
@@ -54,11 +56,12 @@ class PDOProblemMessageRepositoryTest extends TestCase
         $problem = 'Alessio is aan het vodden.';
         $solved = 0;
         $date = '2017-03-12';
+        $severe = true;
 
-        $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date);
+        $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date, $severe);
 
-        $this->connection->exec("INSERT INTO problemmessages (id, location_id, problem, solved, date)
-                                  VALUES ($id, $locationId, '$problem', $solved, '$date')");
+        $this->connection->exec("INSERT INTO problemmessages (id, location_id, problem, solved, date, severe)
+                                  VALUES ($id, $locationId, '$problem', $solved, '$date', '$severe')");
         $PDOProblemMessageRepository = new PDOProblemMessageRepository($this->connection);
 
         $actualProblemMessage = $PDOProblemMessageRepository->findProblemMessageById($id);
@@ -81,7 +84,8 @@ class PDOProblemMessageRepositoryTest extends TestCase
         $problem = 'banken verouderd';
         $date = '24-09-2017';
         $solved = 1;
-        $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date);
+        $severe = true;
+        $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date, $severe);
 
         $problemMessageRepository = new PDOProblemMessageRepository($this->connection);
 

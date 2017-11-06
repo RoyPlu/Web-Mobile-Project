@@ -30,7 +30,7 @@ class PDOStatusMessageRepository implements StatusMessageRepository
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
             if (count($results) > 0) {
                 return new StatusMessage($results[0]['id'], $results[0]['location_id'], $results[0]['status'],
-                    $results[0]['date'], $results[0]['end_date']);
+                    $results[0]['date']);
             } else {
                 return null;
             }
@@ -48,7 +48,7 @@ class PDOStatusMessageRepository implements StatusMessageRepository
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
             for ($i = 0; $i < count($results); $i++) {
                 $eventArray[$i] = new StatusMessage($results[$i]['id'], $results[$i]['location_id'],
-                    $results[$i]['status'], $results[$i]['date'], $results[$i]['end_date']);
+                    $results[$i]['status'], $results[$i]['date']);
             }
             return $eventArray;
         } catch (\Exception $ex) {
@@ -62,14 +62,12 @@ class PDOStatusMessageRepository implements StatusMessageRepository
             $status = $statusMessage->getStatus();
             $locationId = $statusMessage->getLocationId();
             $date = $statusMessage->getDate();
-            $endDate = $statusMessage->getEndDate();
 
-            $statement = $this->connection->prepare('INSERT INTO statusmessages (status, location_id, date, end_date) VALUES(?,?,?,?)');
+            $statement = $this->connection->prepare('INSERT INTO statusmessages (status, location_id, date) VALUES(?,?,?)');
 
             $statement->bindParam(1, $status, \PDO::PARAM_STR);
             $statement->bindParam(2, $locationId, \PDO::PARAM_INT);
             $statement->bindParam(3, $date);
-            $statement->bindParam(4, $endDate);
 
             $statement->execute();
             return $statusMessage;

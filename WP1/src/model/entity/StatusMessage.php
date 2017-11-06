@@ -16,15 +16,13 @@ class StatusMessage
     private $LocationId = null;
     private $Status = "";
     private $Date = null;
-    private $EndDate = null;
 
-    public function __construct($statusMessageId = null, $locationId = null, $status = "", $date = null, $endDate = null)
+    public function __construct($statusMessageId = null, $locationId = null, $status = "", $date = null)
     {
         $this->StatusMessageId = $statusMessageId;
         $this->LocationId = $locationId;
         $this->Status = $status;
         $this->Date = $date;
-        $this->EndDate = $endDate;
     }
 
     /**
@@ -89,22 +87,6 @@ class StatusMessage
     public function setDate($date)
     {
         $this->Date = $date;
-    }
-
-    /**
-     * @return null
-     */
-    public function getEndDate()
-    {
-        return $this->EndDate;
-    }
-
-    /**
-     * @param null $EndDate
-     */
-    public function setEndDate($EndDate)
-    {
-        $this->EndDate = $EndDate;
     }
 
 }

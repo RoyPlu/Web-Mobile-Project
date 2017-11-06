@@ -3,13 +3,16 @@
 require './vendor/autoload.php';
 require 'vendor/altorouter/altorouter/AltoRouter.php';
 
+use api\controller\EndDateProblemFormController;
 use api\controller\LocationsController;
 use api\controller\ProblemMessageController;
 use api\controller\ScoreController;
+use api\model\entity\EndDateProblemForm;
 use api\model\entity\Location;
 use api\model\entity\ProblemMessage;
 use api\model\entity\Score;
 use api\model\entity\StatusMessage;
+use api\model\repository\PDOEndDateProblemFormRepository;
 use api\model\repository\PDOLocationRepository;
 use api\model\repository\PDOProblemMessageRepository;
 use api\model\repository\PDOScoreRepository;
@@ -19,6 +22,7 @@ use api\view\ProblemMessageJsonView;
 use api\view\ScoreJsonView;
 use api\view\StatusMessageJsonView;
 use api\controller\StatusMessageController;
+use api\view\EndDateProblemFormJsonView;
 
 $user = "root";
 $password = "";
@@ -49,6 +53,11 @@ try {
     $scorePDORepository = new PDOScoreRepository($pdo);
     $scoreJsonView = new ScoreJsonView();
     $scoreController = new ScoreController($scorePDORepository, $scoreJsonView);
+
+    //enddateproblems
+    $endDateProblemPDORepository = new PDOEndDateProblemFormRepository($pdo);
+    $endDateJsonView = new EndDateProblemFormJsonView();
+    $endDateProblemFormController = new EndDateProblemFormController($endDateProblemPDORepository, $endDateJsonView);
 
     $router = new AltoRouter();
     $router->setBasePath('/Web-Mobile-Project/api.php');
@@ -120,7 +129,6 @@ try {
             $insertedStatusMessage->setStatus($data['status']);
             $insertedStatusMessage->setLocationId($data['location_id']);
             $insertedStatusMessage->setDate($data['date']);
-            $insertedStatusMessage->setEndDate($data['end_date']);
 
             $statusMessageController->handleCreateStatusMessage($insertedStatusMessage);
         }
@@ -156,6 +164,12 @@ try {
         }
     );
 
+    $router->map('GET', '/problemmessages/[i:id]/enddate',
+        function($id) use (&$endDateProblemFormController) {
+            $endDateProblemFormController->handleFindEndDateProblemFormByProblemMessageId($id);
+        }
+    );
+
     $router->map('GET', '/scores',
         function () use (&$scoreController) {
             $scoreController->handleFindScores();
@@ -181,6 +195,33 @@ try {
             $insertedScore->setDate($data['date']);
 
             $scoreController->handleCreateScore($insertedScore);
+        }
+    );
+
+    $router->map('GET', '/enddateproblems',
+        function () use (&$endDateProblemFormController) {
+            $endDateProblemFormController->handleFindEndDateProblemForms();
+        }
+    );
+
+    $router->map('GET', '/enddateproblems/[i:id]',
+        function($id) use (&$endDateProblemFormController) {
+            $endDateProblemFormController->handleFindEndDateProblemFormById($id);
+        }
+    );
+
+    $router->map('POST', '/enddateproblems/',
+        function() use (&$endDateProblemFormController) {
+            $data = json_decode(file_get_contents('php://input'));
+            $data = (array)$data[0];
+
+            var_dump($data);
+
+            $insertedEndDateProblem = new EndDateProblemForm();
+            $insertedEndDateProblem->setProblemId($data['problemmessage_id']);
+            $insertedEndDateProblem->setEndDate($data['end_date']);
+
+            $endDateProblemFormController->handleCreateEndDateProblemForm($insertedEndDateProblem);
         }
     );
 
