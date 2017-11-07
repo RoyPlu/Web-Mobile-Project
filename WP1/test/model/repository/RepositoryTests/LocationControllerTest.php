@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * Date: 31/10/2017
  * Time: 13:35
  */
-class LocationRepositoryTest extends TestCase
+class LocationControllerTest extends TestCase
 {
     /**
      * @var LocationRepository|PHPUnit_Framework_MockObject_MockObject $mockLocationRepo

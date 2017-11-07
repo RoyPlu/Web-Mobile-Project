@@ -3,13 +3,13 @@ namespace api\model\entity;
 
 class Location
 {
-    private $locationId = null;
-    private $locationName = "";
+    private $LocationId = null;
+    private $LocationName = "";
 
     public function __construct($id = null, $name = "")
     {
-        $this->locationId = $id;
-        $this->locationName = $name;
+        $this->LocationId = $id;
+        $this->LocationName = $name;
     }
 
     /**
@@ -17,14 +17,14 @@ class Location
      */
     public function getLocationId()
     {
-        return $this->locationId;
+        return $this->LocationId;
     }
     /**
-     * @param null $locationId
+     * @param null $LocationId
      */
-    public function setLocationId($locationId)
+    public function setLocationId($LocationId)
     {
-        $this->locationId = $locationId;
+        $this->LocationId = $LocationId;
     }
 
     /**
@@ -32,13 +32,13 @@ class Location
      */
     public function getLocationName()
     {
-        return $this->locationName;
+        return $this->LocationName;
     }
     /**
-     * @param string $locationName
+     * @param string $LocationName
      */
-    public function setLocationName($locationName)
+    public function setLocationName($LocationName)
     {
-        $this->locationName = $locationName;
+        $this->LocationName = $LocationName;
     }
 }

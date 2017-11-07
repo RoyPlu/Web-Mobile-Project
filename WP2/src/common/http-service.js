@@ -29,21 +29,27 @@ class HttpService {
     }
 
     getProblemMessagesByLocationId(id) {
-        console.log(`${this.baseUrl}/location/${id}/problems`);
+        console.log(`${this.baseUrl}/locations/${id}/problems`);
         console.log(axios.get(`${this.baseUrl}/location/${id}/problems`).then(r => r.data));
         return axios.get(`${this.baseUrl}/location/${id}/problems`).then(r => r.data);
     }
 
     getStatusMessagesByLocationId(id) {
-        console.log(`${this.baseUrl}/location/${id}/status`);
+        console.log(`${this.baseUrl}/locations/${id}/status`);
         console.log(axios.get(`${this.baseUrl}/location/${id}/status`).then(r => r.data));
         return axios.get(`${this.baseUrl}/location/${id}/status`).then(r => r.data);
     }
 
     getScoresByLocationId(id) {
-        console.log(`${this.baseUrl}/location/${id}/scores`);
+        console.log(`${this.baseUrl}/locations/${id}/scores`);
         console.log(axios.get(`${this.baseUrl}/location/${id}/scores`).then(r => r.data));
         return axios.get(`${this.baseUrl}/location/${id}/scores`).then(r => r.data);
+    }
+
+    getEndDateByProblemMessageId(id) {
+        console.log(`${this.baseUrl}/problemmessages/${id}/enddate`);
+        console.log(axios.get(`${this.baseUrl}/problemmessages/${id}/enddate`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/problemmessages/${id}/enddate`).then(r => r.data);
     }
 
     addLocationEntry(id, name) {
