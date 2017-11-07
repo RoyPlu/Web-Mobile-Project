@@ -33,7 +33,7 @@ class ScoreJsonView implements View
 
             foreach ($scores as $score) {
 
-                $scoreAmount += $score->getScore();
+                $scoreAmount += $score->getNumericScore();
                 $scoreCount += 1;
 
                 $totalScore = $scoreAmount/$scoreCount;
