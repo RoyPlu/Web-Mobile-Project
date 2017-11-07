@@ -27,13 +27,24 @@ class ScoreJsonView implements View
             $scores = $data['scores'];
             $eventArr = [];
 
+            $scoreCount = 0;
+            $scoreAmount = null;
+            $totalScore = null;
+
             foreach ($scores as $score) {
+
+                $scoreAmount += $score->getScore();
+                $scoreCount += 1;
+
+                $totalScore = $scoreAmount/$scoreCount;
 
                 $s = json_encode(['id' => $score->getScoreId(),
                     'location_id' => $score->getLocationId(),
-                        'score' => $score->getNumericScore(),
-                            'date' => $score->getDate()]);
+                    'score' => $score->getNumericScore(),
+                    'date' => $score->getDate(),
+                    'total_Score' => $totalScore]);
                 $eventArr[] = $s;
+
 
             }
 
