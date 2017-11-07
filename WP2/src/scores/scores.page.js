@@ -12,6 +12,7 @@ class ScoresPage extends Component {
         this.state = {
             scores: [],
             locationId : props.match.params.locationId
+
         };
     }
     componentWillMount() {
@@ -22,22 +23,24 @@ class ScoresPage extends Component {
     }
     render(){
         console.log(this.state.scores);
+        var total_score = 0;
 
         var renderedEntries = this.state.scores.map((entry) => {
                 return (
                     <div class="card">
+
                         <h1>Score Id: {entry.id}</h1>
                         <hr/>
                         <h3>Location Id: {entry.location_id}</h3>
                         <h3>Score: {entry.score}</h3>
                         <h3>Date: {entry.date}</h3>
-                        <h4>Total Score: {entry.total_Score}</h4>
+                        <h4>Total Score: {total_score += parseInt(entry.score)/this.state.scores.length}</h4>
                     </div>
+
                 );
         });
         return (
             <div>
-                <hr/>
                 {renderedEntries}
             </div>
         )

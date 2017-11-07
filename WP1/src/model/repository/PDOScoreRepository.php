@@ -64,7 +64,7 @@ class PDOScoreRepository implements ScoreRepository
 
             $statement = $this->connection->prepare('INSERT INTO scores (location_id, score , date) VALUES(?,?,?)');
 
-            $statement->bindParam(1, $score, \PDO::PARAM_STR);
+            $statement->bindParam(1, $score, \PDO::PARAM_INT);
             $statement->bindParam(2, $locationId, \PDO::PARAM_INT);
             $statement->bindParam(3, $date);
 
@@ -101,6 +101,25 @@ class PDOScoreRepository implements ScoreRepository
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
             if (count($results) > 0) {
                 return new score($results[0]['id'], $results[0]['location_id'], $results[0]['score'], $results[0]['date']);
+
+                var_dump($results[0]['score']);
+            } else {
+                return null;
+            }
+        } catch (\Exception $ex) {
+            throw $ex;
+        }
+    }
+
+    function findCountOfScoresbyLocationId($id)
+    {
+        try {
+            $statement = $this->connection->prepare('SELECT COUNT(score) FROM scores WHERE id = ?');
+            $statement->bindParam(1, $id, \PDO::PARAM_INT);
+            $statement->execute();
+            $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
+            if (count($results) > 0) {
+                return $results;
             } else {
                 return null;
             }

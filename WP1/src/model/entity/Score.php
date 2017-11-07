@@ -20,8 +20,8 @@ class Score
     public function __construct($scoreId = null, $locationId = null, $score = null, $date = null)
     {
         $this->ScoreId = $scoreId;
-        $this->Score = $score;
         $this->LocationId = $locationId;
+        $this->Score = $score;
         $this->Date = $date;
     }
 
@@ -46,15 +46,15 @@ class Score
      */
     public function getScore()
     {
-        return $this->ScoreId;
+        return $this->Score;
     }
 
     /**
-     * @param null $ScoreId
+     * @param null $Score
      */
-    public function setScore($ScoreId)
+    public function setScore($Score)
     {
-        $this->ScoreId = $ScoreId;
+        $this->Score = $Score;
     }
 
     /**

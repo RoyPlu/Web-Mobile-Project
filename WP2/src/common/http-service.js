@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class HttpService {
     userId = null;
-    baseUrl = 'http://localhost/wp1/api.php';
+    baseUrl = 'http://localhost/Web-Mobile-Project/api.php';
     parts = null;
     location = null;
 
@@ -30,20 +30,20 @@ class HttpService {
 
     getProblemMessagesByLocationId(id) {
         console.log(`${this.baseUrl}/locations/${id}/problems`);
-        console.log(axios.get(`${this.baseUrl}/location/${id}/problems`).then(r => r.data));
-        return axios.get(`${this.baseUrl}/location/${id}/problems`).then(r => r.data);
+        console.log(axios.get(`${this.baseUrl}/locations/${id}/problems`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/locations/${id}/problems`).then(r => r.data);
     }
 
     getStatusMessagesByLocationId(id) {
         console.log(`${this.baseUrl}/locations/${id}/status`);
-        console.log(axios.get(`${this.baseUrl}/location/${id}/status`).then(r => r.data));
-        return axios.get(`${this.baseUrl}/location/${id}/status`).then(r => r.data);
+        console.log(axios.get(`${this.baseUrl}/locations/${id}/status`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/locations/${id}/status`).then(r => r.data);
     }
 
     getScoresByLocationId(id) {
         console.log(`${this.baseUrl}/locations/${id}/scores`);
-        console.log(axios.get(`${this.baseUrl}/location/${id}/scores`).then(r => r.data));
-        return axios.get(`${this.baseUrl}/location/${id}/scores`).then(r => r.data);
+        console.log(axios.get(`${this.baseUrl}/locations/${id}/scores`).then(r => r.data));
+        return axios.get(`${this.baseUrl}/locations/${id}/scores`).then(r => r.data);
     }
 
     getEndDateByProblemMessageId(id) {

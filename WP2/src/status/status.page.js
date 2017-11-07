@@ -36,7 +36,6 @@ class StatusPage extends Component {
         });
         return (
             <div>
-                <hr/>
                 {renderedEntries}
             </div>
         )

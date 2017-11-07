@@ -35,7 +35,6 @@ class EndDateProblemForms extends Component {
         });
         return (
             <div>
-                <hr/>
                 {renderedEntries}
             </div>
         )

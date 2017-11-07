@@ -53,7 +53,6 @@ class ProblemsPage extends Component {
         });
         return (
             <div>
-                <hr/>
                 {renderedEntries}
             </div>
         )
