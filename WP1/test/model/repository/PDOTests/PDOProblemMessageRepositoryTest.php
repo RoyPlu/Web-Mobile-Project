@@ -21,7 +21,7 @@ class PDOProblemMessageRepositoryTest extends TestCase
     {
         $this->connection = new PDO('sqlite::memory:');
         $this->connection->exec('CREATE TABLE problemmessages (id INT, location_id INT, problem VARCHAR(255),
-                                  solved INT, date DATE, PRIMARY KEY (id))');
+                                  solved INT, date DATE, severe INT, PRIMARY KEY (id))');
     }
 
     public function tearDown()
@@ -61,10 +61,13 @@ class PDOProblemMessageRepositoryTest extends TestCase
         $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date, $severe);
 
         $this->connection->exec("INSERT INTO problemmessages (id, location_id, problem, solved, date, severe)
-                                  VALUES ($id, $locationId, '$problem', $solved, '$date', '$severe')");
+                                  VALUES ($id, $locationId, '$problem', $solved, '$date', $severe)");
         $PDOProblemMessageRepository = new PDOProblemMessageRepository($this->connection);
 
         $actualProblemMessage = $PDOProblemMessageRepository->findProblemMessageById($id);
+
+     var_dump($problemMessage);
+     var_dump($actualProblemMessage);
 
         $this->assertEquals($problemMessage, $actualProblemMessage);
     }

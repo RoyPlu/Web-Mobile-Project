@@ -18,5 +18,4 @@ interface ScoreRepository
     function findScores();
     function insertScore(Score $score);
     function findScoresByLocationId($id);
-    function findCountOfScoresbyLocationId($id);
 }

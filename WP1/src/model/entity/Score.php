@@ -13,15 +13,15 @@ class Score
 {
 
     private $ScoreId = null;
-    private $Score = null;
+    private $NumericScore = null;
     private $LocationId = null;
     private $Date = null;
 
     public function __construct($scoreId = null, $locationId = null, $score = null, $date = null)
     {
         $this->ScoreId = $scoreId;
+        $this->NumericScore = $score;
         $this->LocationId = $locationId;
-        $this->Score = $score;
         $this->Date = $date;
     }
 
@@ -34,27 +34,27 @@ class Score
     }
 
     /**
-     * @param null $ScoreId
+     * @param null $scoreId
      */
-    public function setScoreId($ScoreId)
+    public function setScoreId($scoreId)
     {
-        $this->ScoreId = $ScoreId;
+        $this->ScoreId = $scoreId;
     }
 
     /**
      * @return null
      */
-    public function getScore()
+    public function getNumericScore()
     {
-        return $this->Score;
+        return $this->NumericScore;
     }
 
     /**
-     * @param null $Score
+     * @param null $score
      */
-    public function setScore($Score)
+    public function setNumericScore($score)
     {
-        $this->Score = $Score;
+        $this->NumericScore = $score;
     }
 
     /**
@@ -66,11 +66,11 @@ class Score
     }
 
     /**
-     * @param null $LocationId
+     * @param null $locationId
      */
-    public function setLocationId($LocationId)
+    public function setLocationId($locationId)
     {
-        $this->LocationId = $LocationId;
+        $this->LocationId = $locationId;
     }
 
     /**

@@ -191,7 +191,7 @@ try {
 
             $insertedScore = new Score();
             $insertedScore->setLocationId($data['location_id']);
-            $insertedScore->setScore($data['score']);
+            $insertedScore->setNumericScore($data['score']);
             $insertedScore->setDate($data['date']);
 
             $scoreController->handleCreateScore($insertedScore);

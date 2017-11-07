@@ -34,11 +34,10 @@ class PDOStatusMessageRepositoryTest extends TestCase
         $locationId = 1;
         $status = 'goed';
         $date = null;
-        $endDate = null;
-        $statusMessage = new StatusMessage($id, $locationId, $status, $date, $endDate);
+        $statusMessage = new StatusMessage($id, $locationId, $status, $date);
 
-        $this->connection->exec("INSERT INTO statusmessages(id, location_id, status, date, end_date)
-                                  VALUES ($id, $locationId, '$status', '$date', '$endDate')");
+        $this->connection->exec("INSERT INTO statusmessages(id, location_id, status, date)
+                                  VALUES ($id, $locationId, '$status', '$date')");
         $statusMessageRepository = new PDOStatusMessageRepository($this->connection);
 
         $actualStatusMessage = $statusMessageRepository->findStatusMessages();
@@ -52,11 +51,10 @@ class PDOStatusMessageRepositoryTest extends TestCase
         $locationId = 101;
         $status = 'Goed';
         $date = '2017-03-12';
-        $endDate = '2017-05-24';
-        $statusMessage = new StatusMessage($id, $locationId, $status, $date, $endDate);
+        $statusMessage = new StatusMessage($id, $locationId, $status, $date);
 
-        $this->connection->exec("INSERT INTO statusmessages (id, location_id, status, date, end_date) 
-                                  VALUES ($id, $locationId, '$status', '$date', '$endDate')");
+        $this->connection->exec("INSERT INTO statusmessages (id, location_id, status, date) 
+                                  VALUES ($id, $locationId, '$status', '$date')");
         $StatusMessageRepository = new PDOStatusMessageRepository($this->connection);
 
         $actualStatusMessage = $StatusMessageRepository->findStatusMessageById($id);
@@ -78,8 +76,7 @@ class PDOStatusMessageRepositoryTest extends TestCase
         $locationId = 101;
         $status = 'goed';
         $date = '24-09-2017';
-        $endDate = '25-10-2017';
-        $statusMessage = new StatusMessage($id, $locationId, $status, $date, $endDate);
+        $statusMessage = new StatusMessage($id, $locationId, $status, $date);
 
         $statusMessageRepository = new PDOStatusMessageRepository($this->connection);
 
