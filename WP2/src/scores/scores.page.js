@@ -14,6 +14,10 @@ class ScoresPage extends Component {
             locationId : props.match.params.locationId
 
         };
+
+        window.total_score = 0;
+        window.i = 0;
+
     }
     componentWillMount() {
         if (!hasFetchedEntries) {
@@ -23,7 +27,6 @@ class ScoresPage extends Component {
     }
     render(){
         console.log(this.state.scores);
-        var total_score = 0;
 
         var renderedEntries = this.state.scores.map((entry) => {
                 return (
@@ -34,8 +37,9 @@ class ScoresPage extends Component {
                         <h3>Location Id: {entry.location_id}</h3>
                         <h3>Score: {entry.score}</h3>
                         <h3>Date: {entry.date}</h3>
-                        <h4>Total Score: {total_score += parseInt(entry.score)/this.state.scores.length}</h4>
+                        <h4>Average Score: {(window.total_score += parseInt(entry.score))/(window.i+=1)}</h4>
                     </div>
+
 
                 );
         });

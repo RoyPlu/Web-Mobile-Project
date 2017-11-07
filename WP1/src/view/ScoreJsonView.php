@@ -44,8 +44,6 @@ class ScoreJsonView implements View
                     'date' => $score->getDate(),
                     'total_Score' => $totalScore]);
                 $eventArr[] = $s;
-
-
             }
 
             echo "[ " . implode(",", $eventArr) . " ]";

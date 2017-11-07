@@ -22,8 +22,8 @@
       <file leaf-file-name="PDOScoreRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/repository/PDOScoreRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-481">
-              <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+            <state relative-caret-position="505">
+              <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
               <folding>
                 <marker date="1510062927216" expanded="true" signature="458:491" ph="SELECT * FRO... scores" />
                 <marker date="1510062927216" expanded="true" signature="1055:1075" ph="SELECT * FRO... scores" />
@@ -99,8 +99,8 @@
       <file leaf-file-name="Score.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/entity/Score.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="238">
+              <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -129,8 +129,8 @@
       <file leaf-file-name="ScoreJsonView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/ScoreJsonView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="36" column="33" lean-forward="true" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state relative-caret-position="451">
+              <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -205,10 +205,10 @@
         <option value="$PROJECT_DIR$/src/model/repository/PDOStatusMessageRepository.php" />
         <option value="$PROJECT_DIR$/src/model/repository/PDOProblemMessageRepository.php" />
         <option value="$PROJECT_DIR$/api.php" />
-        <option value="$PROJECT_DIR$/src/view/ScoreJsonView.php" />
         <option value="$PROJECT_DIR$/src/model/repository/ScoreRepository.php" />
         <option value="$PROJECT_DIR$/src/model/entity/Score.php" />
         <option value="$PROJECT_DIR$/src/model/repository/PDOScoreRepository.php" />
+        <option value="$PROJECT_DIR$/src/view/ScoreJsonView.php" />
       </list>
     </option>
   </component>
@@ -485,12 +485,12 @@
       <workItem from="1507888879950" duration="28283000" />
       <workItem from="1508486852380" duration="913000" />
       <workItem from="1508492222864" duration="59121000" />
-      <workItem from="1510059753215" duration="2606000" />
+      <workItem from="1510059753215" duration="3633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121066000" />
+    <option name="totallyTimeSpent" value="122093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="701" y="41" width="960" height="1040" extended-state="0" />
@@ -854,14 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/ScoreJsonView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="36" column="33" lean-forward="true" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ScoreController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -872,16 +864,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/entity/Score.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        <state relative-caret-position="238">
+          <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/ScoreJsonView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/repository/PDOScoreRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-481">
-          <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+        <state relative-caret-position="505">
+          <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
           <folding>
             <marker date="1510062927216" expanded="true" signature="458:491" ph="SELECT * FRO... scores" />
             <marker date="1510062927216" expanded="true" signature="1055:1075" ph="SELECT * FRO... scores" />
