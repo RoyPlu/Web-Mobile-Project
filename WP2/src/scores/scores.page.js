@@ -31,6 +31,7 @@ class ScoresPage extends Component {
                         <h3>Location Id: {entry.location_id}</h3>
                         <h3>Score: {entry.score}</h3>
                         <h3>Date: {entry.date}</h3>
+                        <h4>Total Score: {entry.total_Score}</h4>
                     </div>
                 );
         });
