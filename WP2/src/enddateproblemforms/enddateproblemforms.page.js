@@ -22,17 +22,13 @@ class EndDateProblemForms extends Component {
     }
     render(){
         console.log(this.state.endDateProblemForms);
-
-        const renderedEntries = this.state.endDateProblemForms.map((entry) => {
-            return (
+        const renderedEntries =
                 <div class="card">
-                    <h1>EndDateProblemForm Id: {entry.id}</h1>
+                    <h1>EndDateProblemForm Id: {this.state.endDateProblemForms.id}</h1>
                     <hr/>
-                    <h3>ProblemMessage Id: {entry.problemmessage_id}</h3>
-                    <h3>End Date: {entry.end_date}</h3>
-                </div>
-            );
-        });
+                    <h3>ProblemMessage Id: {this.state.endDateProblemForms.problem_id}</h3>
+                    <h3>End Date: {this.state.endDateProblemForms.end_date}</h3>
+                </div>;
         return (
             <div>
                 {renderedEntries}
@@ -41,7 +37,7 @@ class EndDateProblemForms extends Component {
     }
     componentDidMount() {
         this.props.setTitle('EndDateProblemForms');
-    }    
+    }
 }
 
 export default connect(undefined, mapDispatchToProps)(EndDateProblemForms);

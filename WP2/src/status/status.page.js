@@ -22,7 +22,7 @@ class StatusPage extends Component {
     }
     render(){
         console.log(this.state.status);
-        
+
         var renderedEntries = this.state.status.map((entry) => {
             return (
                 <div class="card">
