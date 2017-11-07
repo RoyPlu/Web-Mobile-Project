@@ -17,7 +17,7 @@ class EndDateProblemFormJsonView implements View
         if (isset($data['enddateproblemform'])) {
             $event = $data['enddateproblemform'];
             echo json_encode(['id' => $event->getEndDateFormId(),
-                'problem_id' => $event->getProblemId(),
+                'problemmessage_id' => $event->getProblemId(),
                 'end_date' => $event->getEndDate()]);
 
         } elseif (isset($data['enddateproblemforms'])){
@@ -26,7 +26,7 @@ class EndDateProblemFormJsonView implements View
             $eventArr = [];
             foreach ($endDateProblemForms as $endDateProblemForm) {
                 $s = json_encode(['id' => $endDateProblemForm->getEndDateFormId(),
-                    'problem_id' => $endDateProblemForm->getProblemId(),
+                    'problemmessage_id' => $endDateProblemForm->getProblemId(),
                     'end_date' => $endDateProblemForm->getEndDate()]);
                 $eventArr[] = $s;
             }

@@ -91,4 +91,8 @@ class PDOScoreRepositoryTest extends TestCase
         $this->assertEquals($scoreObj->getNumericScore(), $insertedScore->getScore());
     }
 
+    public function testHandleFindScoreByLocationId() {
+
+    }
+
 }
