@@ -21,29 +21,20 @@ class ScoreJsonView implements View
 
             echo json_encode(['id' => $event->getScoreId(),
                 'location_id' => $event->getLocationId(),
-                    'score' => $event->getScore(),
+                    'score' => $event->getNumericScore(),
                         'date' => $event->getDate()]);
         } elseif (isset($data['scores'])){
             $scores = $data['scores'];
             $eventArr = [];
 
-            $scoreCount = 0;
-            $scoreAmount = null;
-            $totalScore = null;
-
             foreach ($scores as $score) {
-
-                $scoreAmount += $score->getScore();
-                $scoreCount += 1;
-
-                $totalScore = $scoreAmount/$scoreCount;
 
                 $s = json_encode(['id' => $score->getScoreId(),
                     'location_id' => $score->getLocationId(),
-                    'score' => $score->getScore(),
-                    'date' => $score->getDate(),
-                    'total_Score' => $totalScore]);
+                        'score' => $score->getNumericScore(),
+                            'date' => $score->getDate()]);
                 $eventArr[] = $s;
+
             }
 
             echo "[ " . implode(",", $eventArr) . " ]";
