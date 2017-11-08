@@ -53,8 +53,13 @@ class HttpService {
     }
 
     addLocationEntry(id, name) {
-        return axios.post(`${this.baseUrl}/locations`, { name:name });
+        return axios.post(`${this.baseUrl}/locations`, { id: id, name:name });
     }
+
+    addProblemEntry(id, locationId, description, solved, date, severe) {
+        return axios.post(`${this.baseUrl}/locations`, { id: id, name:locationId, description: description, solved:solved, date:date, severe:severe  });
+    }
+
     deleteLocationEntry(id) {
         return axios.delete(`${this.baseUrl}/locations/${id}`)
     }

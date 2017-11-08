@@ -12,6 +12,7 @@ import LocationsPage from './locations/locations.page';
 import LocationPage from './locations/location.page';
 import LocationsAddPage from './locations/locations-add.page';
 import ProblemsPage from './problems/problems.page';
+import ProblemsAddPage from './problems/problems-add.page';
 import ScoresPage from './scores/scores.page';
 import EndDateProblemForms from './enddateproblemforms/enddateproblemforms.page';
 import StatusPage from './status/status.page';
@@ -49,6 +50,7 @@ class Layout extends Component {
                     <Route exact={true} path='/locations/:locationId' component={LocationPage}/>
                     <Route exact={true} path='/locations/:locationId/problems' component={ProblemsPage}/>
                     <Route exact={true} path="/addlocation" component={LocationsAddPage} />
+                    <Route exact={true} path="/addproblem" component={ProblemsAddPage} />
                     <Route path='/locations/:locationId/status' component={StatusPage}/>
                     <Route path='/locations/:locationId/scores' component={ScoresPage}/>
                     <Route path="/statusmessages" component={StatusPage} />
