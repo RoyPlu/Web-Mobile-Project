@@ -53,10 +53,10 @@ class HttpService {
     }
 
     addLocationEntry(id, name) {
-        return axios.post(`${this.baseUrl}/calorieEntries`, { id: id, userId: this.userId, name:name });
+        return axios.post(`${this.baseUrl}/locations`, { name:name });
     }
     deleteLocationEntry(id) {
-        return axios.delete(`${this.baseUrl}/calorieEntries/${id}`)
+        return axios.delete(`${this.baseUrl}/locations/${id}`)
     }
 }
 

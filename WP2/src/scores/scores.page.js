@@ -37,7 +37,7 @@ class ScoresPage extends Component {
                         <h3>Location Id: {entry.location_id}</h3>
                         <h3>Score: {entry.score}</h3>
                         <h3>Date: {entry.date}</h3>
-                        <h4>Average Score: {(window.total_score += parseInt(entry.score))/(window.i+=1)}</h4>
+                        <h4>Average Score: {(window.total_score += parseInt(entry.score))/(window.i+=1) + "/10"}</h4>
                     </div>
 
 
