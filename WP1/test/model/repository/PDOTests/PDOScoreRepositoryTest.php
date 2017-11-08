@@ -88,10 +88,24 @@ class PDOScoreRepositoryTest extends TestCase
 
         $insertedScore = $scoreRepository->insertScore($scoreObj);
 
-        $this->assertEquals($scoreObj->getNumericScore(), $insertedScore->getScore());
+        $this->assertEquals($scoreObj->getDate(), $insertedScore->getDate());
     }
 
     public function testHandleFindScoreByLocationId() {
+
+        $id = 1;
+        $locationId = 1;
+        $score = 'goed';
+        $date = null;
+        $scoreObj = new Score($id, $locationId, $score, $date);
+
+        $this->connection->exec("INSERT INTO scores(id, location_id, score, date)
+                                  VALUES ($id, $locationId, '$score', '$date')");
+        $scoreRepository = new PDOScoreRepository($this->connection);
+
+        $actualScore = $scoreRepository->findScoresByLocationId($locationId);
+
+        $this->assertEquals([$scoreObj], $actualScore);
 
     }
 

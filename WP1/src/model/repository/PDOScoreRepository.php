@@ -70,6 +70,7 @@ class PDOScoreRepository implements ScoreRepository
             $statement->bindParam(3, $date);
 
             $statement->execute();
+            return $score;
         } catch (\Exception $ex) {
             var_dump($ex->getMessage());
             return null;
