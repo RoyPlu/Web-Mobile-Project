@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import mapDispatchToProps from '../common/title-dispatch-to-props';
 import HttpService from '../common/http-service';
 import '../index.css';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import { Link } from 'react-router-dom';
 
 let hasFetchedEntries = false;
 
@@ -32,9 +35,14 @@ class ProblemsPage extends Component {
                             <hr/>
                             <h3 color="red">Location Id: {entry.location_id}</h3>
                             <h3 color="red">Description: {entry.problem}</h3>
-                            <h3 color="red">Is solved: {entry.solved}</h3>
+                            <h3 color="red">Is solved: {String(entry.solved)}</h3>
                             <h3 color="red">Date: {entry.date}</h3>
-                            <h3 color="red">Severe: {entry.severe}</h3>
+                            <h3 color="red">Severe: {String(entry.severe)}</h3>
+                            <Link to="/addproblem">
+                                <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
+                                    <ContentAdd />
+                                </FloatingActionButton>
+                            </Link>
                         </div>
                         );
                     } else {
@@ -44,12 +52,18 @@ class ProblemsPage extends Component {
                                 <hr/>
                                 <h3>Location Id: {entry.location_id}</h3>
                                 <h3>Description: {entry.problem}</h3>
-                                <h3>Is solved: {entry.solved}</h3>
+                                <h3>Is solved: {String(entry.solved)}</h3>
                                 <h3>Date: {entry.date}</h3>
-                                <h3>Severe: {entry.severe}</h3>
+                                <h3>Severe: {String(entry.severe)}</h3>
+                                <Link to="/addproblem">
+                                    <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
+                                        <ContentAdd />
+                                    </FloatingActionButton>
+                                </Link>
                             </div>
                         );
                     }
+
         });
         return (
             <div>

@@ -3,6 +3,9 @@ import LocationsTable from './locations-table';
 import HttpService from '../common/http-service';
 import { connect } from "react-redux";
 import mapDispatchToPropsTitle from '../common/title-dispatch-to-props';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import { Link } from 'react-router-dom';
 
 let hasFetchedLocationEntries = false;
 
@@ -22,7 +25,11 @@ class LocationsPage extends Component {
         return (
             <div>
                 <LocationsTable entries={fetchedEntries} delete={this.delete} />
-
+                <Link to="/addlocation">
+                    <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
+                        <ContentAdd />
+                    </FloatingActionButton>
+                </Link>
             </div>
         );
     }

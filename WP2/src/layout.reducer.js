@@ -12,6 +12,8 @@ const layoutreducer = (state = initialState, action) => {
             return { ...state, ...{ locationEntries: action.payload } };
         case 'ADD_LOCATIONENTRY':
             return { ...state, ...{ locationEntries: [...state.locationEntries, action.payload] } };
+        case 'ADD_PROBLEMENTRY':
+            return { ...state, ...{ locationEntries: [...state.locationEntries, action.payload] } };
         case 'DELETE_LOCATIONENTRY':
             const date = action.payload;
             const entryToDeleteIndex = state.locationEntries.findIndex(e => e.date === date);
