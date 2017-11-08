@@ -6,7 +6,6 @@ import DatePicker from 'material-ui/DatePicker';
 import FlatButton from 'material-ui/FlatButton';
 import HttpService from '../common/http-service';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 
 class ProblemsAddPage extends Component {
     constructor() {
@@ -20,14 +19,14 @@ class ProblemsAddPage extends Component {
             </div>
         );
         return (
-            <div>
+            <div class="formDesign">
                 <form onSubmit={this.save}>
                     <TextField hintText="locationId" name="locationId" />
-                    <TextField hintText="description" name="description" />
+                    <TextField hintText="problem" name="problem" />
                     <TextField hintText="solved" name="solved" />
-                    <DatePicker hintText="Date" name="date" />
+                    <DatePicker hintText="date" name="date" />
                     <TextField hintText="severe" name="severe" />
-                    <FlatButton label="Default" type="submit" />
+                    <FlatButton label="Add ProblemMessage" type="submit" />
                 </form>
                 {this.state.showMessage ? message : null}
             </div>
@@ -35,29 +34,17 @@ class ProblemsAddPage extends Component {
     }
     save = (ev) => {
         ev.preventDefault();
-        const date = ev.target['date'].value;
-        const locationId = ev.target['locationId'].value;
-        const description = ev.target['description'].value;
-        const solved = ev.target['solved'].value;
-        const severe = ev.target['severe'].value;
-        // date in juiste formaat YYYY-MM-dd => ddMMYYYY
-        const momentDate = moment(date);
-        const dateToSend = momentDate.format('DDMMYYYY');
-        const id = HttpService.getId();
-        HttpService.addProblemEntry(id, locationId, description, solved, dateToSend, severe).then(() => {
-            this.props.addEntry({
-                "id": id,
-                "locationId": locationId,
-                "description": description,
-                "solved": solved,
-                "date": dateToSend,
-                "severe": severe
-            });
-            this.setState({ showMessage: true });
-        });
-    }
+        console.log(ev);
+        let date = ev.target['date'].value;
+        let locationId = ev.target['locationId'].value;
+        let problem = ev.target['problem'].value;
+        let solved = ev.target['solved'].value;
+        let severe = ev.target['severe'].value;
+        HttpService.addProblemMessageEntry(locationId, problem, solved, date, severe);
+        this.setState({ showMessage: true });
+    };
     componentDidMount() {
-        this.props.setTitle('Update Problem');
+        this.props.setTitle('Add Problem');
     }
 }
 
@@ -68,6 +55,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch({ type: 'ADD_PROBLEMENTRY', payload: entry });
         }
     }
-}
+};
 
 export default connect(undefined, mapDispatchToProps)(ProblemsAddPage)

@@ -28,7 +28,7 @@ class ProblemsPage extends Component {
 
         var renderedEntries = this.state.problems.map((entry) => {
 
-                    if (entry.severe === true) {
+                    if (entry.severe === true && entry.solved === false) {
                         return (
                         <div class="severeCard">
                             <h1>Problem Id: {entry.id}</h1>
@@ -38,7 +38,7 @@ class ProblemsPage extends Component {
                             <h3>Is solved: {String(entry.solved)}</h3>
                             <h3>Date: {entry.date}</h3>
                             <h3>Severe: {String(entry.severe)}</h3>
-                            <Link to={`/problemmessages/${entry.location_id}/enddate`}>
+                            <Link to={`/problemmessages/${entry.id}/enddate`}>
                                 <button>End Date Form</button>
                             </Link>
                         </div>
@@ -53,7 +53,7 @@ class ProblemsPage extends Component {
                                 <h3>Is solved: {String(entry.solved)}</h3>
                                 <h3>Date: {entry.date}</h3>
                                 <h3>Severe: {String(entry.severe)}</h3>
-                                <Link to={`/problemmessages/${entry.location_id}/enddate`}>
+                                <Link to={`/problemmessages/${entry.id}/enddate`}>
                                     <button>End Date Form</button>
                                 </Link>
                             </div>
@@ -64,7 +64,7 @@ class ProblemsPage extends Component {
         return (
             <div>
                 {renderedEntries}
-                <Link to="/addproblem">
+                <Link to="/addproblemmessage">
                     <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
                         <ContentAdd />
                     </FloatingActionButton>

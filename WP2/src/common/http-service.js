@@ -52,12 +52,59 @@ class HttpService {
         return axios.get(`${this.baseUrl}/problemmessages/${id}/enddate`).then(r => r.data);
     }
 
-    addLocationEntry(id, name) {
-        return axios.post(`${this.baseUrl}/locations`, { id: id, name:name });
+    addLocationEntry(name) {
+        console.log(JSON.stringify({ name:name }));
+        axios.post(`${this.baseUrl}/locations/`, JSON.stringify([{name : name}]))
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
-    addProblemEntry(id, locationId, description, solved, date, severe) {
-        return axios.post(`${this.baseUrl}/locations`, { id: id, name:locationId, description: description, solved:solved, date:date, severe:severe  });
+    addProblemMessageEntry(locationId, problem, solved, date, severe) {
+        console.log(JSON.stringify({ location_id:locationId, problem: problem, solved:solved, date:date, severe:severe }));
+        axios.post(`${this.baseUrl}/problemmessages/`, JSON.stringify([{location_id:locationId, problem:problem, solved:solved, date:date, severe:severe}]))
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    addScoreEntry(locationId, score, date) {
+        console.log(JSON.stringify({location_id:locationId, score:score, date:date}));
+        axios.post(`${this.baseUrl}/scores/`, JSON.stringify([{location_id:locationId, score:score, date:date}]))
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    addStatusMessageEntry(locationId, status, date) {
+        console.log(JSON.stringify({location_id:locationId, status:status, date:date}));
+        axios.post(`${this.baseUrl}/statusmessages/`, JSON.stringify([{location_id:locationId, status:status, date:date}]))
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    addEndDateProblemFormEntry(problemMessageId, endDate) {
+        console.log(JSON.stringify({problemmessage_id:problemMessageId, end_date:endDate}));
+        axios.post(`${this.baseUrl}/enddateproblems/`, JSON.stringify([{problemmessage_id:problemMessageId, end_date:endDate}]))
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     deleteLocationEntry(id) {

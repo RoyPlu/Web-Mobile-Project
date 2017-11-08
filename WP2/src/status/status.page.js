@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import mapDispatchToProps from '../common/title-dispatch-to-props';
 import HttpService from '../common/http-service';
 import '../index.css';
+import { Link } from 'react-router-dom';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 let hasFetchedEntries = false;
 
@@ -37,6 +40,11 @@ class StatusPage extends Component {
         return (
             <div>
                 {renderedEntries}
+                <Link to="/addstatusmessage">
+                    <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
+                        <ContentAdd />
+                    </FloatingActionButton>
+                </Link>
             </div>
         )
     }

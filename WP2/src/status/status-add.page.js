@@ -8,7 +8,7 @@ import HttpService from '../common/http-service';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-class LocationsAddPage extends Component {
+class StatusAddPage extends Component {
     constructor() {
         super();
         this.state = { showMessage: false };
@@ -22,8 +22,10 @@ class LocationsAddPage extends Component {
         return (
             <div class="formDesign">
                 <form onSubmit={this.save}>
-                    <TextField hintText="Name" name="name" id="name" />
-                    <FlatButton label="Add Location" type="submit" />
+                    <TextField hintText="locationId" name="locationId" />
+                    <TextField hintText="status" name="status" />
+                    <DatePicker hintText="date" name="date" />
+                    <FlatButton label="Add StatusMessage" type="submit" />
                 </form>
                 {this.state.showMessage ? message : null}
             </div>
@@ -32,12 +34,17 @@ class LocationsAddPage extends Component {
     save = (ev) => {
         ev.preventDefault();
         console.log(ev);
-        let name = ev.target['name'].value;
-        HttpService.addLocationEntry(name);
-        this.setState({ showMessage: true })
+        let date = ev.target['date'].value;
+        let locationId = ev.target['locationId'].value;
+        let status = ev.target['status'].value;
+        // date in juiste formaat YYYY-MM-dd => ddMMYYYY
+        //let momentDate = moment(date);
+        //let dateToSend = momentDate.format('DDMMYYYY');
+        HttpService.addStatusMessageEntry(locationId, status, date);
+        this.setState({ showMessage: true });
     };
     componentDidMount() {
-        this.props.setTitle('Add Location');
+        this.props.setTitle('Add Status');
     }
 }
 
@@ -45,9 +52,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         ...mapDispatchToPropsTitle(dispatch, ownProps),
         addEntry: (entry) => {
-            dispatch({ type: 'ADD_LOCATIONENTRY', payload: entry });
+            dispatch({ type: 'ADD_PROBLEMENTRY', payload: entry });
         }
     }
 };
 
-export default connect(undefined, mapDispatchToProps)(LocationsAddPage)
+export default connect(undefined, mapDispatchToProps)(StatusAddPage)

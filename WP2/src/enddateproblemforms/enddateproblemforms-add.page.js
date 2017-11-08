@@ -6,9 +6,8 @@ import DatePicker from 'material-ui/DatePicker';
 import FlatButton from 'material-ui/FlatButton';
 import HttpService from '../common/http-service';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 
-class LocationsAddPage extends Component {
+class EndDateProblemFormsAddPage extends Component {
     constructor() {
         super();
         this.state = { showMessage: false };
@@ -22,8 +21,9 @@ class LocationsAddPage extends Component {
         return (
             <div class="formDesign">
                 <form onSubmit={this.save}>
-                    <TextField hintText="Name" name="name" id="name" />
-                    <FlatButton label="Add Location" type="submit" />
+                    <TextField hintText="problemMessageId" name="problemMessageId" />
+                    <DatePicker hintText="end_date" name="end_date" />
+                    <FlatButton label="Add End Date Form" type="submit" />
                 </form>
                 {this.state.showMessage ? message : null}
             </div>
@@ -32,12 +32,13 @@ class LocationsAddPage extends Component {
     save = (ev) => {
         ev.preventDefault();
         console.log(ev);
-        let name = ev.target['name'].value;
-        HttpService.addLocationEntry(name);
-        this.setState({ showMessage: true })
+        let problemMessageId = ev.target['problemMessageId'].value;
+        let endDate = ev.target['end_date'].value;
+        HttpService.addEndDateProblemFormEntry(problemMessageId, endDate);
+        this.setState({ showMessage: true });
     };
     componentDidMount() {
-        this.props.setTitle('Add Location');
+        this.props.setTitle('Add End Date Form');
     }
 }
 
@@ -45,9 +46,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         ...mapDispatchToPropsTitle(dispatch, ownProps),
         addEntry: (entry) => {
-            dispatch({ type: 'ADD_LOCATIONENTRY', payload: entry });
+            dispatch({ type: 'ADD_PROBLEMENTRY', payload: entry });
         }
     }
 };
 
-export default connect(undefined, mapDispatchToProps)(LocationsAddPage)
+export default connect(undefined, mapDispatchToProps)(EndDateProblemFormsAddPage)

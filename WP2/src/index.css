@@ -21,6 +21,12 @@ html, body{
     margin: 20px;
 }
 
+.formDesign {
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+}
+
 .table {
     font-size: 30px;
 }
