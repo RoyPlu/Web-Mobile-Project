@@ -32,9 +32,9 @@ class ProblemsPage extends Component {
                             <hr/>
                             <h3 color="red">Location Id: {entry.location_id}</h3>
                             <h3 color="red">Description: {entry.problem}</h3>
-                            <h3 color="red">Is solved: {entry.solved}</h3>
+                            <h3 color="red">Is solved: {String(entry.solved)}</h3>
                             <h3 color="red">Date: {entry.date}</h3>
-                            <h3 color="red">Severe: {entry.severe}</h3>
+                            <h3 color="red">Severe: {String(entry.severe)}</h3>
                         </div>
                         );
                     } else {
@@ -44,9 +44,9 @@ class ProblemsPage extends Component {
                                 <hr/>
                                 <h3>Location Id: {entry.location_id}</h3>
                                 <h3>Description: {entry.problem}</h3>
-                                <h3>Is solved: {entry.solved}</h3>
+                                <h3>Is solved: {String(entry.solved)}</h3>
                                 <h3>Date: {entry.date}</h3>
-                                <h3>Severe: {entry.severe}</h3>
+                                <h3>Severe: {String(entry.severe)}</h3>
                             </div>
                         );
                     }
