@@ -12,6 +12,15 @@ html, body{
     background-color: rgba(220, 213, 175, 0.18);
 }
 
+.severeCard {
+    background-color: red;
+    float: left;
+    padding: 20px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 20px;
+}
+
 .table {
     font-size: 30px;
 }

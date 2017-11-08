@@ -66,9 +66,6 @@ class PDOProblemMessageRepositoryTest extends TestCase
 
         $actualProblemMessage = $PDOProblemMessageRepository->findProblemMessageById($id);
 
-     var_dump($problemMessage);
-     var_dump($actualProblemMessage);
-
         $this->assertEquals($problemMessage, $actualProblemMessage);
     }
 

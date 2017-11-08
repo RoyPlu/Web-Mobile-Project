@@ -26,7 +26,7 @@ class EndDateProblemForms extends Component {
                 <div class="card">
                     <h1>EndDateProblemForm Id: {this.state.endDateProblemForms.id}</h1>
                     <hr/>
-                    <h3>ProblemMessage Id: {this.state.endDateProblemForms.problem_id}</h3>
+                    <h3>ProblemMessage Id: {this.state.endDateProblemForms.problemmessage_id}</h3>
                     <h3>End Date: {this.state.endDateProblemForms.end_date}</h3>
                 </div>;
         return (

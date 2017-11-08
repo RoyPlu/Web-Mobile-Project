@@ -30,18 +30,16 @@ class ProblemsPage extends Component {
 
                     if (entry.severe === true) {
                         return (
-                        <div class="card">
-                            <h1 color="red">Problem Id: {entry.id}</h1>
+                        <div class="severeCard">
+                            <h1>Problem Id: {entry.id}</h1>
                             <hr/>
-                            <h3 color="red">Location Id: {entry.location_id}</h3>
-                            <h3 color="red">Description: {entry.problem}</h3>
-                            <h3 color="red">Is solved: {String(entry.solved)}</h3>
-                            <h3 color="red">Date: {entry.date}</h3>
-                            <h3 color="red">Severe: {String(entry.severe)}</h3>
-                            <Link to="/addproblem">
-                                <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
-                                    <ContentAdd />
-                                </FloatingActionButton>
+                            <h3>Location Id: {entry.location_id}</h3>
+                            <h3>Description: {entry.problem}</h3>
+                            <h3>Is solved: {String(entry.solved)}</h3>
+                            <h3>Date: {entry.date}</h3>
+                            <h3>Severe: {String(entry.severe)}</h3>
+                            <Link to={`/problemmessages/${entry.location_id}/enddate`}>
+                                <button>End Date Form</button>
                             </Link>
                         </div>
                         );
@@ -55,10 +53,8 @@ class ProblemsPage extends Component {
                                 <h3>Is solved: {String(entry.solved)}</h3>
                                 <h3>Date: {entry.date}</h3>
                                 <h3>Severe: {String(entry.severe)}</h3>
-                                <Link to="/addproblem">
-                                    <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
-                                        <ContentAdd />
-                                    </FloatingActionButton>
+                                <Link to={`/problemmessages/${entry.location_id}/enddate`}>
+                                    <button>End Date Form</button>
                                 </Link>
                             </div>
                         );
@@ -68,6 +64,11 @@ class ProblemsPage extends Component {
         return (
             <div>
                 {renderedEntries}
+                <Link to="/addproblem">
+                    <FloatingActionButton style={{ position: 'fixed', right: '15px', bottom: '15px' }}>
+                        <ContentAdd />
+                    </FloatingActionButton>
+                </Link>
             </div>
         )
     }
