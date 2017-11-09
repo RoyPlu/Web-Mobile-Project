@@ -85,4 +85,21 @@ class PDOStatusMessageRepositoryTest extends TestCase
         $this->assertEquals($statusMessage->getStatus(), $insertedStatusMessage->getStatus());
     }
 
+    public function testHandleFindStatusMessagesByLocationIdFound()
+    {
+        $id = 1;
+        $locationId = 101;
+        $status = 'Goed';
+        $date = '2017-03-12';
+        $statusMessage = new StatusMessage($id, $locationId, $status, $date);
+
+        $this->connection->exec("INSERT INTO statusmessages (id, location_id, status, date) 
+                                  VALUES ($id, $locationId, '$status', '$date')");
+        $StatusMessageRepository = new PDOStatusMessageRepository($this->connection);
+
+        $actualStatusMessage = $StatusMessageRepository->findStatusMessagesByLocationId($locationId);
+
+        $this->assertEquals([$statusMessage], $actualStatusMessage);
+    }
+
 }

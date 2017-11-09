@@ -86,4 +86,19 @@ class PDOEndDateProblemFormRepositoryTest extends TestCase
         $this->assertEquals($endDateProblemForm->getEndDate(), $insertedEndDateProblemForm->getEndDate());
     }
 
+    public function testFindEndDateProblemFormsByProblemMessageId_EndDateProblemFormsFound() {
+        $id = 1;
+        $problemMessageId = 1;
+        $endDate = null;
+        $endDateProblemForm = new EndDateProblemForm($id, $problemMessageId, $endDate);
+
+        $this->connection->exec("INSERT INTO enddateproblemforms(id, problemmessage_id, end_date)
+                                  VALUES ($id, $problemMessageId, '$endDate')");
+        $endDateProblemFormRepository = new PDOEndDateProblemFormRepository($this->connection);
+
+        $actualEndDateProblemForm = $endDateProblemFormRepository->findEndDateProblemFormsByProblemMessageId($problemMessageId);
+
+        $this->assertEquals($endDateProblemForm, $actualEndDateProblemForm);
+    }
+
 }
