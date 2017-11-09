@@ -1,0 +1,19 @@
+
+
+{% extends "::base.html.twig" %}
+{% block title %}locations{% endblock %}
+{% block body %}
+    <form action="{{ path('admin_submit_technician') }}" method="post">
+
+        <input type="hidden" name="technicianId" value="{{ technician.id }}" />
+        <label for="username">{{ 'username'|trans }}</label>
+        <input type="text" id="username" name="_username" value="" required="required" />
+
+        <label for="password">{{ 'password'|trans }}</label>
+        <input type="password" id="password" name="_password" required="required" />
+
+        <input type="submit" id="_submit" name="_submit" value="{{ 'Update'|trans }}" />
+    </form>
+
+
+{% endblock %}

@@ -33,4 +33,80 @@ class AdminController extends Controller
             'unsuccessfully_added_tech' => $unsuccessfully_added_tech,
         ]);
     }
+
+    /**
+     * @Route("/admin", name="delete_tech")
+     */
+    public function deleteTechAction(Request $request){
+            $tech_id = $request->get("tech_id");
+            $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository(User::class)->findOneBy(array('id' => $tech_id));
+
+        if ($entity != null){
+            $em->remove($entity);
+            $em->flush();
+        }
+
+    }
+
+    /**
+     * @Route("/admin/remove", name="admin_remove_technician")
+     */
+    public function removeTechnicianAction(Request $request) {
+        $email = $request->get('techId');
+
+        $em = $this->getDoctrine()->getManager();
+        $usersRepository = $em->getRepository(User::class);
+
+        $user = $usersRepository->findOneBy(array('email' => $email));
+        if(\is_null($user)) {
+            return $this->redirect($this->generateUrl('admin_area', array('error' => 'User could not be deleted, please contact super admin.')), 301);
+        }
+
+        $em->remove($user);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('admin_area', array('error' => 'User is deleted')), 301);
+    }
+
+    /**
+     * @Route("/admin/edit/{id}", name="admin_edit_technician")
+     */
+    public function editTechnicianAction(Request $request, $id) {
+        $em = $this->getDoctrine()->getManager();
+        $usersRepository = $em->getRepository(User::class);
+
+        $technician = $usersRepository->find($id);
+        if(\is_null($technician)) {
+            return $this->redirect($this->generateUrl('admin_area', array('error' => 'Technician could not be found, please try again or contact Super Admin.')), 301);
+        }
+
+        return $this->render('default/edit.technician.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'technician' => $technician,
+        ]);
+    }
+
+    /**
+     * @Route("/admin/edit/submit", name="admin_submit_technician")
+     */
+    public function technicianSubmitAction(Request $request) {
+        $formData = $request->get('technician_edit_form');
+        $id = $formData['id'];
+        $email = $formData['email'];
+        $username = $formData['username'];
+        $password = $formData['plainPassword']['first'];
+        $em = $this->getDoctrine()->getManager();
+        $usersRepository = $em->getRepository(User::class);
+
+        $technician = $usersRepository->find($id);
+        if(\is_null($technician)) {
+            return $this->redirect($this->generateUrl('admin_area', array('error' => 'Technician could not be found, please try again or contact Super Admin.')), 301);
+        }
+
+        return $this->render('default/edit.technician.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'technician' => $technician,
+        ]);
+    }
 }
