@@ -105,5 +105,14 @@
 {% block body %}
             <h1 class="elegantshadow">Welcome</h1>
     <h2> WP3 - Symfony </h2>
+        {%  if app.user == null %}
+            <h2>Not logged in <p>Anon</p></h2>
+{%  else %}
+    <h2>
+    Logged in as: {{ app.user }}
+    </h2>
+{% endif %}
+
+
 {% endblock %}
 
