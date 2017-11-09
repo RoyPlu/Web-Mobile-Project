@@ -11,6 +11,9 @@
         {%  for problemMessage in problemMessages if problemMessages is not empty %}
                 <div class="alert alert-danger" role="alert">
                     <p>{{ problemMessage.problem}}</p>
+            {% if is_granted('ROLE_MGR') %}
+                <button>Assign technician</button>
+            {%  endif %}
                 </div>
         {%  else %}
             <li>No problems found</li>
