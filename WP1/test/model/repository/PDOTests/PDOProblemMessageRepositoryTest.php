@@ -94,4 +94,24 @@ class PDOProblemMessageRepositoryTest extends TestCase
         $this->assertEquals($problemMessage->getProblem(), $insertedProblemMessage->getProblem());
     }
 
+    public function testHandleFindProblemMessagesByLocationIdFound()
+    {
+        $id = 1;
+        $locationId = 101;
+        $problem = 'Alessio is aan het vodden.';
+        $solved = 0;
+        $date = '2017-03-12';
+        $severe = true;
+
+        $problemMessage = new ProblemMessage($id, $locationId, $problem, $solved, $date, $severe);
+
+        $this->connection->exec("INSERT INTO problemmessages (id, location_id, problem, solved, date, severe)
+                                  VALUES ($id, $locationId, '$problem', $solved, '$date', $severe)");
+        $PDOProblemMessageRepository = new PDOProblemMessageRepository($this->connection);
+
+        $actualProblemMessage = $PDOProblemMessageRepository->findProblemMessagesByLocationId($locationId);
+
+        $this->assertEquals([$problemMessage], $actualProblemMessage);
+    }
+
 }

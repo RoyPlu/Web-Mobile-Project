@@ -91,7 +91,7 @@ class PDOScoreRepositoryTest extends TestCase
         $this->assertEquals($scoreObj->getDate(), $insertedScore->getDate());
     }
 
-    public function testHandleFindScoreByLocationId() {
+    public function testHandleFindScoresByLocationId() {
 
         $id = 1;
         $locationId = 1;
