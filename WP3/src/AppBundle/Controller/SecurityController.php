@@ -50,4 +50,10 @@ class SecurityController extends Controller
             ->generateCsrfToken('authenticate'));
     }
 
+    public function confirmedAction()
+    {
+        return $this->render('default/index.html.twig'
+        );
+    }
+
 }

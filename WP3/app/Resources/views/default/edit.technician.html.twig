@@ -5,7 +5,7 @@
 {% block body %}
     <form action="{{ path('admin_submit_technician') }}" method="post">
 
-        <input type="hidden" name="technicianId" value="{{ technician.id }}" />
+        <input type="hidden" name="techId" value="{{ technician.id }}" />
         <label for="username">{{ 'username'|trans }}</label>
         <input type="text" id="username" name="_username" value="" required="required" />
 

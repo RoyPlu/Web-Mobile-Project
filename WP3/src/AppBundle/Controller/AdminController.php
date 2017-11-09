@@ -19,7 +19,7 @@ class AdminController extends Controller
         $role = 'ROLE_TECH';
 
         $qb->select('user')
-            ->from(\AppBundle\Entity\User::class, 'user')
+            ->from(User::class, 'user')
             ->Where('user.roles LIKE :roles')
             ->setParameter('roles', '%"' . $role . '"%');
 
@@ -53,12 +53,13 @@ class AdminController extends Controller
      * @Route("/admin/remove", name="admin_remove_technician")
      */
     public function removeTechnicianAction(Request $request) {
-        $email = $request->get('techId');
+        $id = $request->get('techId');
 
+        var_dump($id);
         $em = $this->getDoctrine()->getManager();
         $usersRepository = $em->getRepository(User::class);
 
-        $user = $usersRepository->findOneBy(array('email' => $email));
+        $user = $usersRepository->findOneBy('id' == $id);
         if(\is_null($user)) {
             return $this->redirect($this->generateUrl('admin_area', array('error' => 'User could not be deleted, please contact super admin.')), 301);
         }
@@ -90,10 +91,9 @@ class AdminController extends Controller
     /**
      * @Route("/admin/edit/submit", name="admin_submit_technician")
      */
-    public function technicianSubmitAction(Request $request) {
+    public function technicianSubmitAction(Request $request, $id) {
         $formData = $request->get('technician_edit_form');
-        $id = $formData['id'];
-        $email = $formData['email'];
+        $id = $formData['technicianId'];
         $username = $formData['username'];
         $password = $formData['plainPassword']['first'];
         $em = $this->getDoctrine()->getManager();
@@ -104,9 +104,21 @@ class AdminController extends Controller
             return $this->redirect($this->generateUrl('admin_area', array('error' => 'Technician could not be found, please try again or contact Super Admin.')), 301);
         }
 
-        return $this->render('default/edit.technician.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'technician' => $technician,
-        ]);
+        $form = $this->createFormBuilder($technician)
+            ->add($id, 'text')
+            ->add($username, 'text')
+            ->add($password, 'password')
+            ->getForm();
+
+        if ($request->getMethod() == 'POST') {
+
+            $form->bindRequest($request);
+
+            if ($form->isValid()){
+
+            }
+                $em->flush();
+                return $this->redirect($this->generateUrl('cursoTaskBundle_task_success', array('nombreTarea' => $task->getTask()) ));
+            }
     }
 }
