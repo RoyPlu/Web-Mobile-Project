@@ -29,12 +29,12 @@ class SecurityController extends Controller
     /**
      * @Route("/register", name="registerroute")
      */
-    public function registerAction()
-    {
-        return $this->render('FOSUserBundle:Registration:register.html.twig', array(
-            // ...
-        ));
-    }
+    /* public function registerAction()
+     {
+         $form = $this->createForm(new ContactType());
+
+         return $this->render('FOSUserBundle:Registration:register.html.twig', array('form' => $form->createView()));
+     }*/
 
     /**
      * @Route("/quit", name="quitroute")
@@ -49,6 +49,5 @@ class SecurityController extends Controller
         return new Response($this->container->get('form.csrf_provider')
             ->generateCsrfToken('authenticate'));
     }
-
 
 }

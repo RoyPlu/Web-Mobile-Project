@@ -1,3 +1,5 @@
+
+
 {% extends "::base.html.twig" %}
 {% block title %}locations{% endblock %}
 {% block body %}
@@ -11,8 +13,8 @@
         {%  for tech in technicians_list if technicians_list is not empty %}
             <div class="alert alert-success" role="alert">
                 <p><label>{{ tech }}</label>
-                    <label style="text-align: right"><a>Edit</a></label>
-                    <label style="text-align: right"><a>Delete</a></label></p>
+                    <label style="text-align: right"><a href="admin/edit/3">Edit</a></label>
+                    <label style="text-align: right"><a href="admin/remove?techId={{ tech.id }}">Delete</a></label></p>
             </div>
         {%  else %}
             <li>No technicians found</li>
