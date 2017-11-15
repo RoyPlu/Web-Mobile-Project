@@ -1,0 +1,29 @@
+
+
+{% extends "::base.html.twig" %}
+{% block title %}locations{% endblock %}
+{% block body %}
+
+<!-- <form action="{{ path('admin_submit_problem') }}" method="post"> -->
+
+        <input type="hidden" name="Id" value="1" />
+
+        <label for="id">{{ 'id'|trans }}</label>
+        <input type="text" id="id" name="_id" value="" />
+
+        <label for="locationId">{{ 'locationId'|trans }}</label>
+        <input type="text" id="locationId" name="_locationId" value="" required="required"/>
+
+        <label for="problem">{{ 'problem'|trans }}</label>
+        <input type="text" id="problem" name="_problem" value="" />
+
+        <label for="date">{{ 'date'|trans }}</label>
+        <input type="date" id="date" name="_date" value="" />
+
+        <label for="finished">{{ 'finished'|trans }}</label>
+        <input type="checkbox" id="finished" name="_finished" value="" />
+
+        <input type="submit" id="_submit" name="_submit" value="{{ 'Update'|trans }}" />
+
+<!-- </form> -->
+{% endblock %}

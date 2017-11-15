@@ -174,6 +174,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_location_location')), array (  'id' => 1,  '_controller' => 'AppBundle\\Controller\\LocationController::locationAction',));
                 }
 
+                if (0 === strpos($pathinfo, '/location/1/addproblem')) {
+                    // app_location_addproblem
+                    if ('/location/1/addproblem' === $pathinfo) {
+                        return array (  '_controller' => 'AppBundle\\Controller\\LocationController::addProblemAction',  '_route' => 'app_location_addproblem',);
+                    }
+
+                    // admin_submit_problem
+                    if ('/location/1/addproblem/submit' === $pathinfo) {
+                        return array (  '_controller' => 'AppBundle\\Controller\\LocationController::problemAddAction',  '_route' => 'admin_submit_problem',);
+                    }
+
+                }
+
             }
 
             elseif (0 === strpos($pathinfo, '/login')) {
