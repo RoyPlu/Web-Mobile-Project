@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Location;
 use AppBundle\Entity\ProblemMessage;
 use AppBundle\Entity\StatusMessage;
+use AppBundle\Form\ProblemType;
 use AppBundle\Repository\ProblemMessageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -77,33 +78,32 @@ class LocationController extends Controller
      * @Route("/location/1/addproblem/submit", name="admin_submit_problem")
      */
     public function problemAddAction(Request $request, $id=1) {
-        $formData = $request->get('problem_add_form');
-        $id = $formData['technicianId'];
-        $username = $formData['username'];
-        $password = $formData['plainPassword']['first'];
-        $em = $this->getDoctrine()->getManager();
-        $usersRepository = $em->getRepository(User::class);
+        // 1) build the form
+        $problem = new ProblemMessage();
+        $form = $this->createForm(ProblemType::class, $problem);
 
-        $technician = $usersRepository->find($id);
-        if(\is_null($technician)) {
-            return $this->redirect($this->generateUrl('admin_area', array('error' => 'Technician could not be found, please try again or contact Super Admin.')), 301);
-        }
+        // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
 
-        $form = $this->createFormBuilder($technician)
-            ->add($id, 'text')
-            ->add($username, 'text')
-            ->add($password, 'password')
-            ->getForm();
+            // 3) Encode the password (you could also do this via Doctrine listener)
+            //$password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+            //$user->setPassword($password);
 
-        if ($request->getMethod() == 'POST') {
-
-            $form->bindRequest($request);
-
-            if ($form->isValid()){
-
-            }
+            // 4) save the User!
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($problem);
             $em->flush();
-            return $this->redirect($this->generateUrl('cursoTaskBundle_task_success', array('nombreTarea' => $task->getTask()) ));
+
+            // ... do any other work - like sending them an email, etc
+            // maybe set a "flash" success message for the user
+
+            return $this->redirectToRoute('default/index.html.twig');
         }
+
+        return $this->render(
+            'default/index.html.twig',
+            array('form' => $form->createView())
+        );
     }
 }

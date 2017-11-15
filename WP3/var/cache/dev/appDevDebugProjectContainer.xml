@@ -511,6 +511,9 @@
     <service id="AppBundle\Controller\SecurityController" class="AppBundle\Controller\SecurityController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Form\ProblemType" class="AppBundle\Form\ProblemType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -695,7 +698,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>oYo+5ZpBamVfdCVDNvgNnY</argument>
+      <argument>s8bAz-mdIwo5TbzUAEsLYR</argument>
       <argument>C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP3\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -705,7 +708,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>oYo+5ZpBamVfdCVDNvgNnY</argument>
+      <argument>s8bAz-mdIwo5TbzUAEsLYR</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -824,7 +827,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.61ce42ee314d3459d7339b36d3fecf2a"/>
+      <argument type="service" id="service_locator.d76e97781cf49fb1c30bc9bf1fd449ff"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -2496,12 +2499,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a0c4542679386.90349995</argument>
+      <argument>5a0c4a9ce43029.48954183</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a0c4542679386.90349995</argument>
+      <argument>5a0c4a9ce43029.48954183</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3771,6 +3774,8 @@
     <service id="abstract.instanceof.AppBundle\Controller\LocationController" class="AppBundle\Controller\LocationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\SecurityController" class="AppBundle\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\SecurityController" class="AppBundle\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\ProblemType" class="AppBundle\Form\ProblemType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\ProblemType" class="AppBundle\Form\ProblemType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="service_locator.7cf49346aef5c207a75bef4dfd2d1131" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
@@ -3791,9 +3796,10 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.61ce42ee314d3459d7339b36d3fecf2a" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.d76e97781cf49fb1c30bc9bf1fd449ff" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="AppBundle\Form\ProblemType" type="service" id="AppBundle\Form\ProblemType"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\RegistrationFormType" type="service" id="fos_user.registration.form.type"/>
@@ -4008,7 +4014,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>58WsKMgzD1</argument>
       <argument>0</argument>
-      <argument>oYo+5ZpBamVfdCVDNvgNnY</argument>
+      <argument>s8bAz-mdIwo5TbzUAEsLYR</argument>
       <argument>C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP3\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4016,7 +4022,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>qnNMLiSurP</argument>
       <argument>0</argument>
-      <argument>oYo+5ZpBamVfdCVDNvgNnY</argument>
+      <argument>s8bAz-mdIwo5TbzUAEsLYR</argument>
       <argument>C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP3\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4024,7 +4030,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>vgqTPbSwi5</argument>
       <argument>0</argument>
-      <argument>oYo+5ZpBamVfdCVDNvgNnY</argument>
+      <argument>s8bAz-mdIwo5TbzUAEsLYR</argument>
       <argument>C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP3\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4032,7 +4038,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>QH1ctdjyd+</argument>
       <argument>0</argument>
-      <argument>oYo+5ZpBamVfdCVDNvgNnY</argument>
+      <argument>s8bAz-mdIwo5TbzUAEsLYR</argument>
       <argument>C:\Users\11500384\Documents\GitHub\Web-Mobile-Project\WP3\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

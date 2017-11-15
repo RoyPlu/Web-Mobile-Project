@@ -180,5 +180,7 @@ class ProblemMessage
     {
         return $this->finished;
     }
+
+    
 }
 
