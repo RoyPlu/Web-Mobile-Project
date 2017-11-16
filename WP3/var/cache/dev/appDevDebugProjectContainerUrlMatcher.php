@@ -164,27 +164,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         if (0 === strpos($pathinfo, '/lo')) {
             if (0 === strpos($pathinfo, '/location')) {
-                // app_location_show
+                // locations
                 if ('/locations' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\LocationController::showAction',  '_route' => 'app_location_show',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\LocationController::showAction',  '_route' => 'locations',);
                 }
 
-                // app_location_location
+                // location
                 if (preg_match('#^/location(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_location_location')), array (  'id' => 1,  '_controller' => 'AppBundle\\Controller\\LocationController::locationAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'location')), array (  'id' => 1,  '_controller' => 'AppBundle\\Controller\\LocationController::locationAction',));
                 }
 
-                if (0 === strpos($pathinfo, '/location/1/addproblem')) {
-                    // app_location_addproblem
-                    if ('/location/1/addproblem' === $pathinfo) {
-                        return array (  '_controller' => 'AppBundle\\Controller\\LocationController::addProblemAction',  '_route' => 'app_location_addproblem',);
-                    }
-
-                    // admin_submit_problem
-                    if ('/location/1/addproblem/submit' === $pathinfo) {
-                        return array (  '_controller' => 'AppBundle\\Controller\\LocationController::problemAddAction',  '_route' => 'admin_submit_problem',);
-                    }
-
+                // admin_submit_problem
+                if ('/locations/addproblem' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ProblemController::newProblemAction',  '_route' => 'admin_submit_problem',);
                 }
 
             }

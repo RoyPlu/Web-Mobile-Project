@@ -9,12 +9,21 @@
     <h1>Problemen</h1>
         <hr style="width: 97%; color: gray; height: 2px; background-color: gray" />
         {%  for problemMessage in problemMessages if problemMessages is not empty %}
-                <div class="alert alert-danger" role="alert">
-                    <p>ProblemId: {{ problemMessage.id }}</p>
+                <div class="alert alert-danger" style="float:inherit;" role="alert">
+                    <p>Problem Id: {{ problemMessage.id }}</p>
+                    <p>Date: {{ problemMessage.date|date('Y-m-d') }}</p>
                     <p>Problem: {{ problemMessage.problem}}</p>
-                    <p>Finished: {{ problemMessage.finished}}</p>
-                    <img style="width:300px;" src="http://drpattydental.com/wp-content/uploads/2017/05/placeholder.png">
+                    <p>
+                        Finished:
+                        {%  if problemMessage.finished == 0 %}
+                        False
+                        {% else %}
+                            True
+                        {% endif %}
 
+                    </p>
+                    <hr>
+                    <img style="width: 300px;" src="{{ asset('uploads/problems/' ~ problemMessage.image) }}">
                     {% if is_granted('ROLE_MGR') %}
                 <button>Assign technician</button>
             {%  endif %}
@@ -22,7 +31,9 @@
         {%  else %}
             <li>No problems found</li>
         {% endfor %}
-        <a href="../location/1/addproblem"><button>Add problem</button></a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a href="../locations/addproblem"><button>Add problem</button></a>
+        {% endif %}
         </br>
     <h1>Status</h1>
         <hr style="width: 97%; color: gray; height: 2px; background-color: gray" />

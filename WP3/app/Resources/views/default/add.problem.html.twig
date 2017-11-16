@@ -1,28 +1,33 @@
-
-
 {% extends "::base.html.twig" %}
 {% block title %}locations{% endblock %}
 {% block body %}
-
- <form action="{{ path('admin_submit_problem') }}" method="post">
-        <input type="hidden" name="Id" value="1" />
-
-        <label for="id">{{ 'id'|trans }}</label>
-        <input type="text" id="id" name="_id" value="" />
-
-        <label for="locationId">{{ 'locationId'|trans }}</label>
-        <input type="text" id="locationId" name="_locationId" value="" required="required"/>
-
-        <label for="problem">{{ 'problem'|trans }}</label>
-        <input type="text" id="problem" name="_problem" value="" />
-
-        <label for="date">{{ 'date'|trans }}</label>
-        <input type="date" id="date" name="_date" value="" />
-
-        <label for="finished">{{ 'finished'|trans }}</label>
-        <input type="checkbox" id="finished" name="_finished" value="" />
-
-        <input type="submit" id="_submit" name="_submit" value="{{ 'Update'|trans }}" />
-
- </form>
+    <div style="border: 2px solid black; padding: 20px; float: left; horiz-align: center">
+    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+    <div class="form-group">
+        {{ form_label(form.locationId) }}
+        {{ form_widget(form.locationId) }}
+        {{ form_errors(form.locationId) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.date) }}
+        {{ form_widget(form.date) }}
+        {{ form_errors(form.date) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.problem) }}
+        {{ form_widget(form.problem) }}
+        {{ form_errors(form.problem) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.image) }}
+        {{ form_widget(form.image) }}
+        {{ form_errors(form.image) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.finished) }}
+        {{ form_widget(form.finished) }}
+        {{ form_errors(form.finished) }}
+    </div>
+    {{ form_end(form) }}
+    </div>
 {% endblock %}

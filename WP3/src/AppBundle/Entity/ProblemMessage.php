@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * ProblemMessage
@@ -36,7 +37,7 @@ class ProblemMessage
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="problem", type="string", length=255)
      */
     private $problem;
@@ -47,6 +48,13 @@ class ProblemMessage
      * @ORM\Column(name="date", type="date")
      */
     private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
 
     /**
      * @var bool
@@ -66,6 +74,22 @@ class ProblemMessage
      * @ORM\Column(name="techId", type="integer")
      */
     private $techId;
+
+    /**
+     * ProblemMessage constructor.
+     */
+    public function __construct($id, $techId, $locationId, $problem, $image, \DateTime $date, $finished)
+    {
+
+        $this->id = $id;
+        $this->techId = $techId;
+        $this->locationId = $locationId;
+        $this->problem = $problem;
+        $this->image = $image;
+        $this->date = $date;
+        $this->finished = $finished;
+
+    }
 
     /**
      * @return int
@@ -181,6 +205,28 @@ class ProblemMessage
         return $this->finished;
     }
 
-    
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return ProblemMessage
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get Image.
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }
 
