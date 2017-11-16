@@ -6,7 +6,6 @@ use Guzzle\Tests\GuzzleTestCase,
     Guzzle\Http\Client as HttpClient,
     Guzzle\Service\Client as ServiceClient,
     Guzzle\Http\EntityBody;
-2
 /**
  * Created by PhpStorm.
  * User: 11502021

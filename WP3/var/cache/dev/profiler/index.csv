@@ -2352,3 +2352,12 @@ efdae5,127.0.0.1,GET,http://localhost:8000/web/css/sizing.css,1510845001,,404
 1be2d5,127.0.0.1,GET,http://localhost:8000/js/bootstrap.min.js,1510845001,,404
 0f24f7,127.0.0.1,GET,http://localhost:8000/uploads/problems/,1510845002,75c59d,200
 75c59d,127.0.0.1,GET,http://localhost:8000/uploads/problems/,1510845002,,404
+8a0f2c,127.0.0.1,GET,http://localhost:8000/locations,1510852945,,200
+735e8e,127.0.0.1,GET,http://localhost:8000/web/css/location.css,1510852946,131092,200
+131092,127.0.0.1,GET,http://localhost:8000/web/css/location.css,1510852946,,404
+5855f9,127.0.0.1,GET,http://localhost:8000/web/css/error.css,1510852946,2314ed,200
+2314ed,127.0.0.1,GET,http://localhost:8000/web/css/error.css,1510852947,,404
+51bd99,127.0.0.1,GET,http://localhost:8000/js/jquery-1.11.1.min.js,1510852947,47fd39,200
+47fd39,127.0.0.1,GET,http://localhost:8000/js/jquery-1.11.1.min.js,1510852947,,404
+083cda,127.0.0.1,GET,http://localhost:8000/js/bootstrap.min.js,1510852948,762aca,200
+762aca,127.0.0.1,GET,http://localhost:8000/js/bootstrap.min.js,1510852948,,404

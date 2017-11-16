@@ -31,7 +31,6 @@ class LocationsAddPage extends Component {
     }
     save = (ev) => {
         ev.preventDefault();
-        console.log(ev);
         let name = ev.target['name'].value;
         HttpService.addLocationEntry(name);
         this.setState({ showMessage: true })

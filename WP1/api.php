@@ -170,23 +170,33 @@ try {
         }
     );
 
+    try{
     $router->map('GET', '/scores',
         function () use (&$scoreController) {
             $scoreController->handleFindScores();
+            return http_response_code(200);
         }
-    );
+    );} catch (Exception $exception){
+        return http_response_code(500);
+    }
 
+    try{
     $router->map('GET', '/scores/[i:id]',
         function($id) use (&$scoreController) {
             $scoreController->handleFindScoreById($id);
+            return http_response_code(200);
         }
     );
+    } catch (Exception $exception){
+        return http_response_code(500);
+    }
 
-    $router->map('POST', '/scores/',
+
+    try{
+    $router->map('POST', '/scores',
         function() use (&$scoreController) {
             $data = json_decode(file_get_contents('php://input'));
             $data = (array)$data[0];
-
             var_dump($data);
 
             $insertedScore = new Score();
@@ -195,8 +205,15 @@ try {
             $insertedScore->setDate($data['date']);
 
             $scoreController->handleCreateScore($insertedScore);
+            return http_response_code(201);
         }
     );
+    }
+    catch (Exception $exception){
+       return http_response_code(500);
+    }
+
+
 
     $router->map('GET', '/enddateproblems',
         function () use (&$endDateProblemFormController) {
@@ -233,4 +250,5 @@ try {
 } catch(PDOException $e) {
     print $e->getMessage();
     var_dump($e);
+    http_response_code(500);
 }
